@@ -1,3 +1,3 @@
 <?php
- $url = "https://smartsolutiondevelopment.com/siap";
+ $url = "https://localhost/siap";
 ?>

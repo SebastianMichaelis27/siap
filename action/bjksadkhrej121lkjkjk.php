@@ -1,5 +1,5 @@
 <?php
- $koneksi = mysqli_connect("localhost", "u674869047_siap_mie", "1N$?*rzt1N$?*rz", "u674869047_siap_mie") or die("Koneksi gagal!");
+ $koneksi = mysqli_connect("localhost", "root", "", "siap") or die("Koneksi gagal!");
 
  error_reporting(E_ALL);
  ini_set('display_errors', 1);
