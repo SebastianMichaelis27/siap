@@ -1,0 +1,63 @@
+<?php
+
+$tmpdir = sys_get_temp_dir();
+$file = tempnam($tmpdir, 'ctk');
+$handle = fopen($file, 'w');
+
+$data  = "\x1B@";    // Reset printer
+
+$data .= "\x0F";     // Condensed ON
+$data .= "\x1BE";    // ESC E = Bold (Emphasized) ON
+$data .= "\n\nTeks Condensed Bold";
+$data .= "\x1BF";    // ESC F = Bold OFF
+$data .= "\nTeks Condensed Normal";
+$data .= "\x12";     // Condensed OFF
+
+
+
+
+/*$data  = "\x1B@";      // Reset
+// Pica (10 CPI)
+$data .= "\x1BP";
+$data .= "Pica 10 CPI\n";
+// Elite (12 CPI)
+$data .= "\x1BM";
+$data .= "Elite 12 CPI\n";
+// Condensed
+$data .= "\x0F";
+$data .= "Condensed\n";
+$data .= "\x12";
+// Double Width
+$data .= "\x0E";
+$data .= "DOUBLE WIDTH";
+$data .= "\x14";       // Double Width OFF
+*/
+
+
+/*$data  = "\x1B@";   // Reset printer
+$data .= "\x0F";    // Condensed
+$data .= "Kecil\n";
+$data .= "\x12";       // Kembali ke ukuran normal
+$data .= "Normal";*/
+
+//$data .= "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+
+
+/*
+// Aktifkan condensed mode (font kecil)
+$data = "\x0F";
+
+// Isi teks
+$data .= "123456789012345678901234567890123456789012345678900123456789001234567890012345678900123456789001234567890";
+
+// Matikan condensed (optional)
+//$data .= "\x14";
+*/
+
+fwrite($handle, $data);
+fclose($handle);
+
+copy($file, "//localhost/EPSONLX");
+unlink($file);
+
+?>

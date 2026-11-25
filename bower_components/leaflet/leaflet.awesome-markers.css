@@ -1,0 +1,49 @@
+.icon-label
+ { vertical-align : middle;
+   display : table-cell;
+   user-select : none;
+   font-size : 12px;
+   line-height : 1;
+ }
+
+.sebastian-marker-icon-store
+ { background : url('images/store.png') no-repeat 0 0;
+   width : 35px;
+   height : 46px;
+   position : absolute;
+   background-position : center;
+   background-size : 100% 100%;
+   left : 0;
+   top : 0;
+   display : block;
+   text-align : center;
+   font-weight : bold;
+ }
+
+.sebastian-marker-icon-user
+ { background : url('images/user.png') no-repeat 0 0;
+   width : 35px;
+   height : 46px;
+   position : absolute;
+   background-position : center;
+   background-size : 100% 100%;
+   left : 0;
+   top : 0;
+   display : block;
+   text-align : center;
+   font-weight : bold;
+ }
+
+.sebastian-marker-icon-house
+ { background : url('images/house.png') no-repeat 0 0;
+   width : 35px;
+   height : 46px;
+   position : absolute;
+   background-position : center;
+   background-size : 100% 100%;
+   left : 0;
+   top : 0;
+   display : block;
+   text-align : center;
+   font-weight : bold;
+ }

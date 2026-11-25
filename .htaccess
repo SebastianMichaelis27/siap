@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Jika file atau folder asli ada, maka stop
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 3 SEGMENT
+# contoh: form/kategori/laptop
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/?$ index.php?form=$1&barang_id=$2&jenis_customer_id=$3 [L,QSA]
+
+# 2 SEGMENT (non angka)
+# contoh: form/kategori
+RewriteRule ^([^/]+)/([^/]+)/?$ index.php?form=$1&kategori=$2 [L,QSA]
+
+# 1 SEGMENT
+# contoh: form
+RewriteRule ^([^/]+)/?$ index.php?form=$1 [L,QSA]
+
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
