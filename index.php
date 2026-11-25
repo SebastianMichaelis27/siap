@@ -38,7 +38,7 @@
     header('Location: dashboard');
   }
 
- $_GET['form'] = str_replace(".php", "", $_GET['form']);
+ $_GET['form'] = str_replace(".php", "", $_GET['form'] ?? '');
  if($_GET['form'] == "")
   { $_GET['form'] = "index";
   }

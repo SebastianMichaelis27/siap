@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : SIAP MIE
+ Source Server         : Lokal
  Source Server Type    : MySQL
- Source Server Version : 110809 (11.8.9-MariaDB-log)
- Source Host           : srv1235.hstgr.io:3306
- Source Schema         : u674869047_siap_mie
+ Source Server Version : 100432 (10.4.32-MariaDB)
+ Source Host           : localhost:3306
+ Source Schema         : siap
 
  Target Server Type    : MySQL
- Target Server Version : 110809 (11.8.9-MariaDB-log)
+ Target Server Version : 100432 (10.4.32-MariaDB)
  File Encoding         : 65001
 
- Date: 25/11/2026 15:01:53
+ Date: 25/11/2026 15:51:11
 */
 
 SET NAMES utf8mb4;
@@ -296,7 +296,7 @@ CREATE TABLE `catatan_penawaran`  (
   `judul` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `catatan` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of catatan_penawaran
@@ -421,7 +421,7 @@ CREATE TABLE `jasa`  (
   `jasa` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `harga` decimal(20, 2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jasa
@@ -487,11 +487,11 @@ DROP TABLE IF EXISTS `karyawan`;
 CREATE TABLE `karyawan`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `cabang_id` bigint NULL DEFAULT NULL,
-  `nik` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
-  `nama` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT '',
+  `nik` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `nama` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '',
   `jabatan_id` int NULL DEFAULT NULL,
-  `no_hp` text CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL,
-  `alamat` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `no_hp` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `alamat` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `gaji_per_bulan` decimal(20, 2) NULL DEFAULT NULL,
   `gaji_per_hari` decimal(20, 2) NULL DEFAULT NULL,
   `persenan_insentif` decimal(10, 2) NULL DEFAULT NULL,
@@ -515,13 +515,13 @@ CREATE TABLE `karyawan`  (
   `tanggal_gajian_tiap_bulan` int NULL DEFAULT NULL,
   `terakhir_gajian` date NULL DEFAULT NULL,
   `status_aktif` int NULL DEFAULT 1,
-  `file_foto` varchar(40) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `file_foto` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `utang` int NULL DEFAULT 0,
-  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `last_login` datetime NULL DEFAULT NULL,
   `jam_kerja_id` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of karyawan
@@ -537,7 +537,7 @@ CREATE TABLE `kata_pengantar`  (
   `tipe` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `kata_pengantar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of kata_pengantar
@@ -585,8 +585,6 @@ CREATE TABLE `log_barang_masuk`  (
 -- ----------------------------
 -- Records of log_barang_masuk
 -- ----------------------------
-INSERT INTO `log_barang_masuk` VALUES (1, '2026-11-24', 1, 'Pembelian', '[{\"id\":1,\"barang_masuk_id\":1,\"pembelian_detail_id\":1,\"rak_id\":1,\"jumlah\":10,\"terjual\":null,\"dikirim\":null,\"mutasi\":null,\"retur\":null,\"rusak\":null,\"hilang\":null}]', '2026-11-24 02:08:10', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_barang_masuk` VALUES (2, '2026-11-24', 1, 'Pembelian', '[{\"id\":2,\"barang_masuk_id\":2,\"pembelian_detail_id\":2,\"rak_id\":1,\"jumlah\":5,\"terjual\":null,\"dikirim\":null,\"mutasi\":null,\"retur\":null,\"rusak\":null,\"hilang\":null},{\"id\":3,\"barang_masuk_id\":2,\"pembelian_detail_id\":2,\"rak_id\":2,\"jumlah\":5,\"terjual\":null,\"dikirim\":null,\"mutasi\":null,\"retur\":null,\"rusak\":null,\"hilang\":null}]', '2026-11-24 02:14:38', 'sebastian', NULL, NULL, NULL, NULL, 1);
 
 -- ----------------------------
 -- Table structure for log_pembelian
@@ -626,8 +624,6 @@ CREATE TABLE `log_pembelian`  (
 -- ----------------------------
 -- Records of log_pembelian
 -- ----------------------------
-INSERT INTO `log_pembelian` VALUES (1, 1, 'PO', 1, 2026, '2026-11-24', 2, 1, 'Sebarga', 'Jl. AH. Nasution No. 17', '[{\"no_telp_supplier\":\"08122281231\"}]', '[{\"no_wa_supplier\":\"08122281231\"}]', NULL, '[{\"id\":1,\"pembelian_id\":1,\"barang_id\":4,\"harga\":3000000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3000000,\"jumlah\":10,\"sub_total\":30000000,\"sub_total_sebelum_ppn\":30000000,\"diskon_item\":0,\"diskon_item_detail\":null,\"diskon_faktur\":0,\"dpp\":30000000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":30000000,\"masuk_gudang\":null,\"retur\":null}]', 30000000.00, NULL, NULL, 30000000.00, NULL, 0.00, 30000000.00, '2026-11-24 02:07:38', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_pembelian` VALUES (2, 1, 'PO', 2, 2026, '2026-11-24', 2, 1, 'Sebarga', 'Jl. AH. Nasution No. 17', '[{\"no_telp_supplier\":\"08122281231\"}]', '[{\"no_wa_supplier\":\"08122281231\"}]', NULL, '[{\"id\":2,\"pembelian_id\":2,\"barang_id\":6,\"harga\":3500000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3500000,\"jumlah\":10,\"sub_total\":35000000,\"sub_total_sebelum_ppn\":35000000,\"diskon_item\":0,\"diskon_item_detail\":null,\"diskon_faktur\":0,\"dpp\":35000000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":35000000,\"masuk_gudang\":null,\"retur\":null}]', 35000000.00, NULL, NULL, 35000000.00, NULL, 0.00, 35000000.00, '2026-11-24 02:12:33', 'sebastian', NULL, NULL, NULL, NULL, 1);
 
 -- ----------------------------
 -- Table structure for log_penawaran
@@ -679,9 +675,57 @@ CREATE TABLE `log_penawaran`  (
 -- ----------------------------
 -- Records of log_penawaran
 -- ----------------------------
-INSERT INTO `log_penawaran` VALUES (1, 1, '02', 1, 2026, '2026-11-23', 2, 1, 2, 7, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":1,\"penawaran_id\":1,\"barang_id\":4,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC15YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 0,5 PK (5.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":3840000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3840000,\"jumlah\":1,\"jumlah_pesanan\":null,\"sub_total\":3840000,\"sub_total_sebelum_ppn\":3840000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":3840000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":3840000,\"approved_at\":\"2026-11-23 21:04:44\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 1.00, NULL, 3840000.00, NULL, NULL, 3840000.00, NULL, 0.00, 3840000.00, '2026-11-23 21:04:44', 'sebastian', 'auto', NULL, NULL, '2026-11-23 21:04:44', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penawaran` VALUES (2, 1, '02', 2, 2026, '2026-11-24', 2, 1, 2, 8, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":2,\"penawaran_id\":2,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"jumlah_pesanan\":null,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":4570000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4570000,\"approved_at\":\"2026-11-24 02:17:17\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 1.00, NULL, 4570000.00, NULL, NULL, 4570000.00, NULL, 0.00, 4570000.00, '2026-11-24 02:17:17', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:17:17', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penawaran` VALUES (2, 1, '02', 2, 2026, '2026-11-24', 2, 1, 2, 8, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":2,\"penawaran_id\":2,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"jumlah_pesanan\":null,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":457000,\"dpp\":4113000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4113000,\"approved_at\":null,\"approved_by\":null,\"approved_type\":null,\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 1.00, NULL, 4570000.00, 10.00, 457000.00, 4113000.00, NULL, 0.00, 4113000.00, NULL, NULL, 'auto', NULL, NULL, '2026-11-24 02:17:17', 'sebastian', '2026-11-24 02:19:11', 'sebastian', NULL, NULL, 2);
+
+-- ----------------------------
+-- Table structure for log_penawaran_proyek
+-- ----------------------------
+DROP TABLE IF EXISTS `log_penawaran_proyek`;
+CREATE TABLE `log_penawaran_proyek`  (
+  `id` bigint NULL DEFAULT NULL,
+  `cabang_id` bigint NULL DEFAULT NULL,
+  `kode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nomor` int NULL DEFAULT NULL,
+  `tahun` int NULL DEFAULT NULL,
+  `tanggal` date NULL DEFAULT NULL,
+  `kata_pengantar_id` bigint NULL DEFAULT NULL,
+  `catatan_penawaran_id` bigint NULL DEFAULT NULL,
+  `tanda_tangan_id` bigint NULL DEFAULT NULL,
+  `batas_waktu` int NULL DEFAULT NULL,
+  `karyawan_id` bigint NULL DEFAULT NULL,
+  `customer_id` bigint NULL DEFAULT NULL,
+  `nama_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `alamat_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_telp_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_wa_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `email_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `credit_limit_customer` decimal(20, 2) NULL DEFAULT NULL,
+  `detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `jumlah` decimal(20, 2) NULL DEFAULT NULL,
+  `jumlah_pesanan` decimal(20, 2) NULL DEFAULT NULL,
+  `sub_total` decimal(20, 2) NULL DEFAULT NULL,
+  `persen_diskon` decimal(20, 2) NULL DEFAULT NULL,
+  `diskon` decimal(20, 2) NULL DEFAULT NULL,
+  `dpp` decimal(20, 2) NULL DEFAULT NULL,
+  `persen_ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `total` decimal(20, 2) NULL DEFAULT NULL,
+  `approved_at` datetime NULL DEFAULT NULL,
+  `approved_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `approved_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `rejected_at` datetime NULL DEFAULT NULL,
+  `rejected_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `created_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  `updated_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `deleted_at` datetime NULL DEFAULT NULL,
+  `deleted_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_urut` int NULL DEFAULT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of log_penawaran_proyek
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for log_penjualan
@@ -734,13 +778,6 @@ CREATE TABLE `log_penjualan`  (
 -- ----------------------------
 -- Records of log_penjualan
 -- ----------------------------
-INSERT INTO `log_penjualan` VALUES (1, 1, 'INV', 1, 2026, '2026-11-23', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":1,\"penjualan_id\":1,\"pesanan_detail_id\":null,\"barang_id\":4,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC15YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 0,5 PK (5.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":3840000,\"jenis_ppn\":\"Non PPN\",\"harga_sebelum_ppn\":3840000,\"jumlah\":1,\"sub_total\":3840000,\"sub_total_sebelum_ppn\":3840000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":0,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":3840000,\"approved_at\":\"2026-11-23 12:49:49\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":0,\"jumlah_dikirim\":null,\"ditandai\":[],\"jumlah_retur\":null}]', 3840000.00, NULL, NULL, 0.00, NULL, 0.00, 3840000.00, 1, '[]', 3840000.00, NULL, '2026-11-23 12:49:49', 'sebastian', 'auto', NULL, NULL, '2026-11-23 12:49:49', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penjualan` VALUES (2, 1, 'INV', 1, 2026, '2026-11-24', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":2,\"penjualan_id\":2,\"pesanan_detail_id\":2,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":457000,\"dpp\":4113000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4113000,\"approved_at\":\"2026-11-24 02:23:43\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":0,\"jumlah_dikirim\":null,\"ditandai\":[],\"jumlah_retur\":null}]', 4570000.00, 10.00, 457000.00, 4113000.00, NULL, 0.00, 4113000.00, 1, '[]', 4113000.00, NULL, '2026-11-24 02:23:43', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:23:43', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penjualan` VALUES (2, 1, 'INV', 1, 2026, '2026-11-24', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":3,\"penjualan_id\":2,\"pesanan_detail_id\":null,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Non PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":0,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4570000,\"approved_at\":null,\"approved_by\":null,\"approved_type\":null,\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":0,\"jumlah_dikirim\":null,\"ditandai\":[],\"jumlah_retur\":null}]', 4570000.00, NULL, NULL, 0.00, NULL, 0.00, 4570000.00, 2, '[{\"id\":1,\"penjualan_id\":2,\"tanggal\":\"2026-12-01\",\"nominal\":1000000,\"dibayar\":null},{\"id\":2,\"penjualan_id\":2,\"tanggal\":\"2026-12-09\",\"nominal\":1000000,\"dibayar\":null},{\"id\":3,\"penjualan_id\":2,\"tanggal\":\"2026-12-16\",\"nominal\":1570000,\"dibayar\":null}]', 4113000.00, NULL, '2026-11-24 02:25:26', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:23:43', 'sebastian', '2026-11-24 02:25:26', 'sebastian', NULL, NULL, 2);
-INSERT INTO `log_penjualan` VALUES (1, 1, 'INV', 1, 2026, '2026-11-23', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":1,\"penjualan_id\":1,\"pesanan_detail_id\":null,\"barang_id\":4,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC15YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 0,5 PK (5.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":3840000,\"jenis_ppn\":\"Non PPN\",\"harga_sebelum_ppn\":3840000,\"jumlah\":1,\"sub_total\":3840000,\"sub_total_sebelum_ppn\":3840000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":0,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":3840000,\"approved_at\":\"2026-11-23 12:49:49\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":0,\"jumlah_dikirim\":null,\"ditandai\":[],\"jumlah_retur\":null}]', 3840000.00, NULL, NULL, 0.00, NULL, 0.00, 3840000.00, 1, '[]', NULL, '[]', '2026-11-23 12:49:49', 'sebastian', 'auto', NULL, NULL, '2026-11-23 12:49:49', 'sebastian', NULL, NULL, '2026-11-24 02:25:52', 'sebastian', 2);
-INSERT INTO `log_penjualan` VALUES (2, 1, 'INV', 1, 2026, '2026-11-24', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":3,\"penjualan_id\":2,\"pesanan_detail_id\":null,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Non PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":0,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4570000,\"approved_at\":null,\"approved_by\":null,\"approved_type\":null,\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":0,\"jumlah_dikirim\":null,\"ditandai\":[],\"jumlah_retur\":null}]', 4570000.00, NULL, NULL, 0.00, NULL, 0.00, 4570000.00, 2, '[{\"id\":1,\"penjualan_id\":2,\"tanggal\":\"2026-12-01\",\"nominal\":1000000,\"dibayar\":null},{\"id\":2,\"penjualan_id\":2,\"tanggal\":\"2026-12-09\",\"nominal\":1000000,\"dibayar\":null},{\"id\":3,\"penjualan_id\":2,\"tanggal\":\"2026-12-16\",\"nominal\":1570000,\"dibayar\":null}]', NULL, '[]', '2026-11-24 02:25:26', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:23:43', 'sebastian', '2026-11-24 02:25:26', 'sebastian', '2026-11-24 02:25:55', 'sebastian', 3);
-INSERT INTO `log_penjualan` VALUES (3, 1, 'INV', 1, 2026, '2026-11-24', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":4,\"penjualan_id\":3,\"pesanan_detail_id\":null,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Non PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":0,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4570000,\"approved_at\":\"2026-11-24 02:26:22\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":0,\"jumlah_dikirim\":null,\"ditandai\":[],\"jumlah_retur\":null}]', 4570000.00, NULL, NULL, 0.00, NULL, 0.00, 4570000.00, 1, '[{\"id\":4,\"penjualan_id\":3,\"tanggal\":\"2026-12-01\",\"nominal\":1000000,\"dibayar\":null},{\"id\":5,\"penjualan_id\":3,\"tanggal\":\"2026-12-09\",\"nominal\":1000000,\"dibayar\":null},{\"id\":6,\"penjualan_id\":3,\"tanggal\":\"2026-12-16\",\"nominal\":1570000,\"dibayar\":null}]', NULL, NULL, '2026-11-24 02:26:22', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:26:22', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penjualan` VALUES (3, 1, 'INV', 1, 2026, '2026-11-24', NULL, 1, NULL, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":4,\"penjualan_id\":3,\"pesanan_detail_id\":null,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Non PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":0,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4570000,\"approved_at\":\"2026-11-24 02:26:22\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"jumlah_ditandai\":1,\"jumlah_dikirim\":null,\"ditandai\":[{\"id\":1,\"penjualan_detail_id\":4,\"barang_masuk_detail_id\":2,\"jumlah\":1,\"dikirim\":null}],\"jumlah_retur\":null}]', 4570000.00, NULL, NULL, 0.00, NULL, 0.00, 4570000.00, 1, '[{\"id\":4,\"penjualan_id\":3,\"tanggal\":\"2026-12-01\",\"nominal\":1000000,\"dibayar\":1000000},{\"id\":5,\"penjualan_id\":3,\"tanggal\":\"2026-12-09\",\"nominal\":1000000,\"dibayar\":0},{\"id\":6,\"penjualan_id\":3,\"tanggal\":\"2026-12-16\",\"nominal\":1570000,\"dibayar\":0},{\"id\":7,\"penjualan_id\":3,\"tanggal\":\"2026-11-24\",\"nominal\":1000000,\"dibayar\":null}]', 1000000.00, '[{\"id\":3,\"penjualan_id\":3,\"tanggal\":\"2026-11-24\",\"nominal\":1000000,\"metode_pembayaran_id\":2,\"keterangan\":null,\"created_at\":\"2026-11-24 02:26:42\",\"created_by\":\"sebastian\",\"updated_at\":null,\"updated_by\":null}]', '2026-11-24 02:29:25', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:26:22', 'sebastian', '2026-11-24 02:29:25', 'sebastian', NULL, NULL, 2);
 
 -- ----------------------------
 -- Table structure for log_penjualan_pembayaran
@@ -765,11 +802,6 @@ CREATE TABLE `log_penjualan_pembayaran`  (
 -- ----------------------------
 -- Records of log_penjualan_pembayaran
 -- ----------------------------
-INSERT INTO `log_penjualan_pembayaran` VALUES (1, 1, '2026-11-23', 3840000.00, 2, NULL, '2026-11-23 12:49:49', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penjualan_pembayaran` VALUES (2, 2, '2026-11-24', 4113000.00, 2, NULL, '2026-11-24 02:23:43', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penjualan_pembayaran` VALUES (2, 2, '2026-11-24', 4113000.00, 2, NULL, '2026-11-24 02:23:43', 'sebastian', NULL, NULL, '2026-11-24 02:25:45', 'sebastian', 2);
-INSERT INTO `log_penjualan_pembayaran` VALUES (1, 1, '2026-11-23', 3840000.00, 2, NULL, '2026-11-23 12:49:49', 'sebastian', NULL, NULL, '2026-11-24 02:25:49', 'sebastian', 2);
-INSERT INTO `log_penjualan_pembayaran` VALUES (3, 3, '2026-11-24', 1000000.00, 2, NULL, '2026-11-24 02:26:42', 'sebastian', NULL, NULL, NULL, NULL, 1);
 
 -- ----------------------------
 -- Table structure for log_pesanan
@@ -819,8 +851,6 @@ CREATE TABLE `log_pesanan`  (
 -- ----------------------------
 -- Records of log_pesanan
 -- ----------------------------
-INSERT INTO `log_pesanan` VALUES (1, 1, '01', 1, 2026, '2026-11-23', 'PO1', 8, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":1,\"pesanan_id\":1,\"penawaran_detail_id\":null,\"barang_id\":4,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC15YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 0,5 PK (5.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":3840000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3840000,\"jumlah\":2,\"jumlah_penjualan\":null,\"sub_total\":7680000,\"sub_total_sebelum_ppn\":7680000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":7680000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":7680000,\"approved_at\":\"2026-11-23 21:27:16\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 2.00, NULL, 7680000.00, NULL, NULL, 7680000.00, NULL, 0.00, 7680000.00, '2026-11-23 21:27:16', 'sebastian', 'auto', NULL, NULL, '2026-11-23 21:27:16', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_pesanan` VALUES (2, 1, '01', 2, 2026, '2026-11-24', 'PO2', 9, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":2,\"pesanan_id\":2,\"penawaran_detail_id\":2,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"jumlah_penjualan\":null,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":457000,\"dpp\":4113000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4113000,\"approved_at\":\"2026-11-24 02:20:16\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 1.00, NULL, 4570000.00, 10.00, 457000.00, 4113000.00, NULL, 0.00, 4113000.00, '2026-11-24 02:20:16', 'sebastian', 'auto', NULL, NULL, '2026-11-24 02:20:16', 'sebastian', NULL, NULL, NULL, NULL, 1);
 
 -- ----------------------------
 -- Table structure for menu
@@ -856,36 +886,38 @@ INSERT INTO `menu` VALUES (16, 3, 'Metode Pembayaran', 'credit-card-alt', 'metod
 INSERT INTO `menu` VALUES (17, 3, 'Kata Pengantar', 'envelope-o', 'kata-pengantar', 17);
 INSERT INTO `menu` VALUES (18, 3, 'Catatan Penawaran', 'sticky-note-o', 'catatan-penawaran', 18);
 INSERT INTO `menu` VALUES (19, 3, 'Tanda Tangan', 'pencil-square', 'tanda-tangan', 19);
-INSERT INTO `menu` VALUES (20, NULL, 'Persediaan', 'book', NULL, 20);
-INSERT INTO `menu` VALUES (21, 20, 'Katalog', 'book', 'katalog', 21);
-INSERT INTO `menu` VALUES (22, 20, 'Pembelian', 'shopping-basket', 'pembelian', 22);
-INSERT INTO `menu` VALUES (23, 20, 'Barang Masuk', 'download', 'barang-masuk', 23);
-INSERT INTO `menu` VALUES (24, 20, 'Penawaran', 'send-o', 'penawaran', 24);
-INSERT INTO `menu` VALUES (25, 20, 'Pesanan', 'shopping-cart', 'pesanan', 25);
-INSERT INTO `menu` VALUES (26, 20, 'Penjualan', 'tag', 'penjualan', 26);
-INSERT INTO `menu` VALUES (27, 20, 'Pengiriman', 'truck', 'pengiriman', 27);
-INSERT INTO `menu` VALUES (28, 20, 'Pindah Rak', 'inbox', 'pindah-rak', 28);
-INSERT INTO `menu` VALUES (29, NULL, 'SDM', 'group', NULL, 29);
-INSERT INTO `menu` VALUES (30, 29, 'Jabatan', 'heartbeat', 'jabatan', 30);
-INSERT INTO `menu` VALUES (31, 29, 'Jam Kerja', 'clock-o', 'jam-kerja', 31);
-INSERT INTO `menu` VALUES (32, 29, 'Karyawan', 'users', 'karyawan', 32);
-INSERT INTO `menu` VALUES (33, 29, 'Validasi Absensi', 'check-square-o', 'validasi-absensi', 33);
-INSERT INTO `menu` VALUES (34, 29, 'Hari Libur', 'calendar', 'hari-libur', 34);
-INSERT INTO `menu` VALUES (35, 29, 'Izin', 'clone', 'izin', 35);
-INSERT INTO `menu` VALUES (36, 29, 'Absensi', 'address-card', 'absensi', 36);
-INSERT INTO `menu` VALUES (37, NULL, 'Approval', 'bell', NULL, 37);
-INSERT INTO `menu` VALUES (38, 37, 'Penawaran', 'handshake-o', 'approval-penawaran', 38);
-INSERT INTO `menu` VALUES (39, 37, 'Pesanan', 'shopping-cart', 'approval-pesanan', 39);
-INSERT INTO `menu` VALUES (40, 37, 'Penjualan', 'tag', 'approval-penjualan', 40);
-INSERT INTO `menu` VALUES (41, NULL, 'Laporan', 'book', NULL, 41);
-INSERT INTO `menu` VALUES (42, 41, 'Lap. Stok', 'file-pdf-o', 'laporan-stok', 42);
-INSERT INTO `menu` VALUES (43, 41, 'Lap. Pesanan', 'file-pdf-o', 'laporan-pesanan', 43);
-INSERT INTO `menu` VALUES (44, 41, 'Lap. Pembelian', 'file-pdf-o', 'laporan-pembelian', 44);
-INSERT INTO `menu` VALUES (45, 41, 'Lap. Penjualan', 'file-pdf-o', 'laporan-penjualan', 45);
-INSERT INTO `menu` VALUES (46, 41, 'Lap. Piutang Customer', 'file-pdf-o', 'laporan-piutang-customer', 46);
-INSERT INTO `menu` VALUES (47, 41, 'Lap. Penerimaan Pembayaran', 'money', 'laporan-penerimaan-pembayaran', 47);
-INSERT INTO `menu` VALUES (123, NULL, 'Users', 'lock', 'users', 123);
-INSERT INTO `menu` VALUES (124, NULL, 'Users Level', 'key', 'users-level', 124);
+INSERT INTO `menu` VALUES (20, NULL, 'Proyek', 'handshake-o', NULL, 20);
+INSERT INTO `menu` VALUES (21, 20, 'Penawaran', 'send-o', 'penawaran-proyek', 21);
+INSERT INTO `menu` VALUES (22, NULL, 'Persediaan', 'book', NULL, 22);
+INSERT INTO `menu` VALUES (23, 22, 'Katalog', 'book', 'katalog', 23);
+INSERT INTO `menu` VALUES (24, 22, 'Pembelian', 'shopping-basket', 'pembelian', 24);
+INSERT INTO `menu` VALUES (25, 22, 'Barang Masuk', 'download', 'barang-masuk', 25);
+INSERT INTO `menu` VALUES (26, 22, 'Penawaran', 'send-o', 'penawaran', 26);
+INSERT INTO `menu` VALUES (27, 22, 'Pesanan', 'shopping-cart', 'pesanan', 27);
+INSERT INTO `menu` VALUES (28, 22, 'Penjualan', 'tag', 'penjualan', 28);
+INSERT INTO `menu` VALUES (29, 22, 'Pengiriman', 'truck', 'pengiriman', 29);
+INSERT INTO `menu` VALUES (30, 22, 'Pindah Rak', 'inbox', 'pindah-rak', 30);
+INSERT INTO `menu` VALUES (31, NULL, 'SDM', 'group', NULL, 31);
+INSERT INTO `menu` VALUES (32, 31, 'Jabatan', 'heartbeat', 'jabatan', 32);
+INSERT INTO `menu` VALUES (33, 31, 'Jam Kerja', 'clock-o', 'jam-kerja', 33);
+INSERT INTO `menu` VALUES (34, 31, 'Karyawan', 'users', 'karyawan', 34);
+INSERT INTO `menu` VALUES (35, 31, 'Validasi Absensi', 'check-square-o', 'validasi-absensi', 35);
+INSERT INTO `menu` VALUES (36, 31, 'Hari Libur', 'calendar', 'hari-libur', 36);
+INSERT INTO `menu` VALUES (37, 31, 'Izin', 'clone', 'izin', 37);
+INSERT INTO `menu` VALUES (38, 31, 'Absensi', 'address-card', 'absensi', 38);
+INSERT INTO `menu` VALUES (39, NULL, 'Approval', 'bell', NULL, 39);
+INSERT INTO `menu` VALUES (40, 39, 'Penawaran', 'handshake-o', 'approval-penawaran', 40);
+INSERT INTO `menu` VALUES (41, 39, 'Pesanan', 'shopping-cart', 'approval-pesanan', 41);
+INSERT INTO `menu` VALUES (42, 39, 'Penjualan', 'tag', 'approval-penjualan', 42);
+INSERT INTO `menu` VALUES (43, NULL, 'Laporan', 'book', NULL, 43);
+INSERT INTO `menu` VALUES (44, 43, 'Lap. Stok', 'file-pdf-o', 'laporan-stok', 44);
+INSERT INTO `menu` VALUES (45, 43, 'Lap. Pesanan', 'file-pdf-o', 'laporan-pesanan', 45);
+INSERT INTO `menu` VALUES (46, 43, 'Lap. Pembelian', 'file-pdf-o', 'laporan-pembelian', 46);
+INSERT INTO `menu` VALUES (47, 43, 'Lap. Penjualan', 'file-pdf-o', 'laporan-penjualan', 47);
+INSERT INTO `menu` VALUES (48, 43, 'Lap. Piutang Customer', 'file-pdf-o', 'laporan-piutang-customer', 48);
+INSERT INTO `menu` VALUES (49, 43, 'Lap. Penerimaan Pembayaran', 'money', 'laporan-penerimaan-pembayaran', 49);
+INSERT INTO `menu` VALUES (125, NULL, 'Users', 'lock', 'users', 125);
+INSERT INTO `menu` VALUES (126, NULL, 'Users Level', 'key', 'users-level', 126);
 
 -- ----------------------------
 -- Table structure for menu_akses
@@ -1209,6 +1241,19 @@ INSERT INTO `menu_akses` VALUES (1, 'pembelian', 'tampil-pemesanan.php');
 INSERT INTO `menu_akses` VALUES (1, 'pembelian', 'tampil-supplier.php');
 INSERT INTO `menu_akses` VALUES (1, 'pembelian', 'tampil.php');
 INSERT INTO `menu_akses` VALUES (1, 'pembelian', 'ubah.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'cetak.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'form.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'get-email.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'get-karyawan.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'get-no-telp.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'hapus.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'simpan-customer.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'simpan.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'tampil-barang.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'tampil-customer.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'tampil-jasa.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'tampil.php');
+INSERT INTO `menu_akses` VALUES (1, 'penawaran-proyek', 'ubah.php');
 INSERT INTO `menu_akses` VALUES (1, 'penawaran', 'cetak.php');
 INSERT INTO `menu_akses` VALUES (1, 'penawaran', 'form.php');
 INSERT INTO `menu_akses` VALUES (1, 'penawaran', 'get-email.php');
@@ -1240,7 +1285,6 @@ INSERT INTO `menu_akses` VALUES (1, 'pengiriman', 'tampil-penjualan.php');
 INSERT INTO `menu_akses` VALUES (1, 'pengiriman', 'tampil.php');
 INSERT INTO `menu_akses` VALUES (1, 'pengiriman', 'ubah.php');
 INSERT INTO `menu_akses` VALUES (1, 'penjualan', '.DS_Store');
-INSERT INTO `menu_akses` VALUES (1, 'penjualan', 'Salinan tampil.php');
 INSERT INTO `menu_akses` VALUES (1, 'penjualan', 'cetak-kwitansi.php');
 INSERT INTO `menu_akses` VALUES (1, 'penjualan', 'cetak.php');
 INSERT INTO `menu_akses` VALUES (1, 'penjualan', 'form.php');
@@ -1337,7 +1381,7 @@ CREATE TABLE `metode_pembayaran`  (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `metode_pembayaran` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of metode_pembayaran
@@ -1376,13 +1420,11 @@ CREATE TABLE `pembelian`  (
   `updated_at` datetime NULL DEFAULT NULL,
   `updated_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pembelian
 -- ----------------------------
-INSERT INTO `pembelian` VALUES (1, 1, 'PO', 1, 2026, '2026-11-24', 2, 1, 'Sebarga', 'Jl. AH. Nasution No. 17', '[{\"no_telp_supplier\":\"08122281231\"}]', '[{\"no_wa_supplier\":\"08122281231\"}]', NULL, '[{\"id\":1,\"pembelian_id\":1,\"barang_id\":4,\"harga\":3000000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3000000,\"jumlah\":10,\"sub_total\":30000000,\"sub_total_sebelum_ppn\":30000000,\"diskon_item\":0,\"diskon_item_detail\":null,\"diskon_faktur\":0,\"dpp\":30000000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":30000000,\"masuk_gudang\":10,\"retur\":null}]', 30000000.00, NULL, NULL, 30000000.00, NULL, 0.00, 30000000.00, '2026-11-24 02:07:38', 'sebastian', NULL, NULL);
-INSERT INTO `pembelian` VALUES (2, 1, 'PO', 2, 2026, '2026-11-24', 2, 1, 'Sebarga', 'Jl. AH. Nasution No. 17', '[{\"no_telp_supplier\":\"08122281231\"}]', '[{\"no_wa_supplier\":\"08122281231\"}]', NULL, '[{\"id\":2,\"pembelian_id\":2,\"barang_id\":6,\"harga\":3500000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3500000,\"jumlah\":10,\"sub_total\":35000000,\"sub_total_sebelum_ppn\":35000000,\"diskon_item\":0,\"diskon_item_detail\":null,\"diskon_faktur\":0,\"dpp\":35000000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":35000000,\"masuk_gudang\":10,\"retur\":null}]', 35000000.00, NULL, NULL, 35000000.00, NULL, 0.00, 35000000.00, '2026-11-24 02:12:33', 'sebastian', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for pembelian_detail
@@ -1408,13 +1450,11 @@ CREATE TABLE `pembelian_detail`  (
   `masuk_gudang` decimal(20, 2) NULL DEFAULT NULL,
   `retur` decimal(20, 2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pembelian_detail
 -- ----------------------------
-INSERT INTO `pembelian_detail` VALUES (1, 1, 4, 3000000.00, 'Belum PPN', 3000000.00, 10.00, 30000000.00, 30000000.00, 0.00, NULL, 0.00, 30000000.00, 0.00, 0.00, 30000000.00, 10.00, NULL);
-INSERT INTO `pembelian_detail` VALUES (2, 2, 6, 3500000.00, 'Belum PPN', 3500000.00, 10.00, 35000000.00, 35000000.00, 0.00, NULL, 0.00, 35000000.00, 0.00, 0.00, 35000000.00, 10.00, NULL);
 
 -- ----------------------------
 -- Table structure for penawaran
@@ -1459,13 +1499,11 @@ CREATE TABLE `penawaran`  (
   `updated_at` datetime NULL DEFAULT NULL,
   `updated_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of penawaran
 -- ----------------------------
-INSERT INTO `penawaran` VALUES (1, 1, '02', 1, 2026, '2026-11-23', 2, 1, 2, 7.00, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":1,\"penawaran_id\":1,\"barang_id\":4,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC15YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 0,5 PK (5.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":3840000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":3840000,\"jumlah\":1,\"jumlah_pesanan\":null,\"sub_total\":3840000,\"sub_total_sebelum_ppn\":3840000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":0,\"dpp\":3840000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":3840000,\"approved_at\":\"2026-11-23 21:04:44\",\"approved_by\":\"sebastian\",\"approved_type\":\"auto\",\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 1.00, NULL, 3840000.00, NULL, NULL, 3840000.00, NULL, 0.00, 3840000.00, '2026-11-23 21:04:44', 'sebastian', 'auto', NULL, NULL, '2026-11-23 21:04:44', 'sebastian', NULL, NULL);
-INSERT INTO `penawaran` VALUES (2, 1, '02', 2, 2026, '2026-11-24', 2, 1, 2, 8.00, 1, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, 7.00, '[{\"id\":2,\"penawaran_id\":2,\"barang_id\":6,\"jasa_id\":null,\"nama_produk\":\"001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)\",\"satuan\":\"Unit\",\"harga\":4570000,\"jenis_ppn\":\"Belum PPN\",\"harga_sebelum_ppn\":4570000,\"jumlah\":1,\"jumlah_pesanan\":1,\"sub_total\":4570000,\"sub_total_sebelum_ppn\":4570000,\"diskon_item\":0,\"diskon_item_detail\":[],\"diskon_faktur\":457000,\"dpp\":4113000,\"persen_ppn\":0,\"nominal_ppn\":0,\"total\":4113000,\"approved_at\":\"2026-11-24 02:19:24\",\"approved_by\":\"sebastian\",\"approved_type\":\"confirm\",\"rejected_at\":null,\"rejected_by\":null,\"retur\":null}]', 1.00, 1.00, 4570000.00, 10.00, 457000.00, 4113000.00, NULL, 0.00, 4113000.00, '2026-11-24 02:19:24', 'sebastian', 'confirm', NULL, NULL, '2026-11-24 02:17:17', 'sebastian', '2026-11-24 02:19:11', 'sebastian');
 
 -- ----------------------------
 -- Table structure for penawaran_detail
@@ -1499,13 +1537,98 @@ CREATE TABLE `penawaran_detail`  (
   `rejected_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `retur` decimal(20, 2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of penawaran_detail
 -- ----------------------------
-INSERT INTO `penawaran_detail` VALUES (1, 1, 4, NULL, '001 - AC DAIKIN STC15YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 0,5 PK (5.000 BTU/H)', 'Unit', 3840000.00, 'Belum PPN', 3840000.00, 1.00, NULL, 3840000.00, 3840000.00, 0.00, '[]', 0.00, 3840000.00, 0.00, 0.00, 3840000.00, '2026-11-23 21:04:44', 'sebastian', 'auto', NULL, NULL, NULL);
-INSERT INTO `penawaran_detail` VALUES (2, 2, 6, NULL, '001 - AC DAIKIN STC25YV SPLIT WALL MOUNTED SUPER MINI SPLIT (SMS) 1 PK (9.000 BTU/H)', 'Unit', 4570000.00, 'Belum PPN', 4570000.00, 1.00, 1.00, 4570000.00, 4570000.00, 0.00, '[]', 457000.00, 4113000.00, 0.00, 0.00, 4113000.00, '2026-11-24 02:19:24', 'sebastian', 'confirm', NULL, NULL, NULL);
+
+-- ----------------------------
+-- Table structure for penawaran_proyek
+-- ----------------------------
+DROP TABLE IF EXISTS `penawaran_proyek`;
+CREATE TABLE `penawaran_proyek`  (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `cabang_id` bigint NULL DEFAULT NULL,
+  `kode` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nomor` int NULL DEFAULT NULL,
+  `tahun` int NULL DEFAULT NULL,
+  `tanggal` date NULL DEFAULT NULL,
+  `kata_pengantar_id` bigint NULL DEFAULT NULL,
+  `catatan_penawaran_id` bigint NULL DEFAULT NULL,
+  `tanda_tangan_id` bigint NULL DEFAULT NULL,
+  `batas_waktu` decimal(20, 2) NULL DEFAULT NULL,
+  `karyawan_id` bigint NULL DEFAULT NULL,
+  `customer_id` bigint NULL DEFAULT NULL,
+  `nama_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `alamat_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_telp_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_wa_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `email_customer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `credit_limit_customer` decimal(20, 2) NULL DEFAULT NULL,
+  `detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `jumlah` decimal(20, 2) NULL DEFAULT NULL,
+  `jumlah_pesanan` decimal(20, 2) NULL DEFAULT NULL,
+  `sub_total` decimal(20, 2) NULL DEFAULT NULL,
+  `persen_diskon` decimal(20, 2) NULL DEFAULT NULL,
+  `diskon` decimal(20, 2) NULL DEFAULT NULL,
+  `dpp` decimal(20, 2) NULL DEFAULT NULL,
+  `persen_ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `total` decimal(20, 2) NULL DEFAULT NULL,
+  `approved_at` datetime NULL DEFAULT NULL,
+  `approved_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `approved_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `rejected_at` datetime NULL DEFAULT NULL,
+  `rejected_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `created_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  `updated_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of penawaran_proyek
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for penawaran_proyek_detail
+-- ----------------------------
+DROP TABLE IF EXISTS `penawaran_proyek_detail`;
+CREATE TABLE `penawaran_proyek_detail`  (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `penawaran_id` bigint NULL DEFAULT NULL,
+  `barang_id` bigint NULL DEFAULT NULL,
+  `jasa_id` bigint NULL DEFAULT NULL,
+  `nama_produk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `satuan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `harga` decimal(20, 2) NULL DEFAULT NULL,
+  `jenis_ppn` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `harga_sebelum_ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `jumlah` decimal(20, 2) NULL DEFAULT NULL,
+  `jumlah_pesanan` decimal(20, 2) NULL DEFAULT NULL,
+  `sub_total` decimal(20, 2) NULL DEFAULT NULL,
+  `sub_total_sebelum_ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `diskon_item` decimal(20, 2) NULL DEFAULT NULL,
+  `diskon_item_detail` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `diskon_faktur` decimal(20, 2) NULL DEFAULT NULL,
+  `dpp` decimal(20, 2) NULL DEFAULT NULL,
+  `persen_ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `nominal_ppn` decimal(20, 2) NULL DEFAULT NULL,
+  `total` decimal(20, 2) NULL DEFAULT NULL,
+  `approved_at` datetime NULL DEFAULT NULL,
+  `approved_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `approved_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `rejected_at` datetime NULL DEFAULT NULL,
+  `rejected_by` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `retur` decimal(20, 2) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of penawaran_proyek_detail
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for pengiriman
@@ -1695,7 +1818,7 @@ CREATE TABLE `penjualan_termin`  (
   `nominal` decimal(20, 2) NULL DEFAULT NULL,
   `dibayar` decimal(20, 2) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of penjualan_termin
@@ -1712,7 +1835,7 @@ DROP TABLE IF EXISTS `perusahaan`;
 CREATE TABLE `perusahaan`  (
   `kode_perusahaan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `nama_perusahaan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of perusahaan
@@ -1907,7 +2030,7 @@ CREATE TABLE `tanda_tangan`  (
   `jabatan` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `file_ttd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tanda_tangan
@@ -1937,7 +2060,7 @@ CREATE TABLE `users`  (
 INSERT INTO `users` VALUES ('001', NULL, 2, 1, 'Dedi Wijaya', 'Admin', 1, NULL);
 INSERT INTO `users` VALUES ('admin', 'D020BBE760B03D57B3DAFFD56DA97A88', 3, NULL, NULL, NULL, NULL, '2026-05-09 09:42:03');
 INSERT INTO `users` VALUES ('emi', 'B8D85278BA64E65A5A42EC6EF3AEF773', 3, NULL, NULL, NULL, NULL, '2026-11-21 19:23:06');
-INSERT INTO `users` VALUES ('sebastian', '4EF85E04C537B51F6CE117869B64EE64', 1, NULL, 'Sebastian', NULL, 6, '2026-11-25 14:10:01');
+INSERT INTO `users` VALUES ('sebastian', '4EF85E04C537B51F6CE117869B64EE64', 1, NULL, 'Sebastian', NULL, 6, '2026-11-25 15:15:46');
 INSERT INTO `users` VALUES ('tasya', '3830DFE131B2B227176795DD6DF39C6916F25D384E066476575F030368625A87', 3, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
