@@ -384,7 +384,10 @@
         <div class='group-border'>
          <div class='group-title'>
           <div class='group-number'>I.</div>
-          <input type='text' class='form-control' style='width:100%;' placeholder='Kelompok Item Pekerjaan'>
+          <div>
+           <input type='text' class='form-control nama_kelompok' style='width:100%;' placeholder='Kelompok Item Pekerjaan'>
+           <div class='error'></div>
+          </div>
           <div style='display:grid; grid-template-columns:auto auto; gap:5px;'>
            <button type='button' class='btn btn-success btn-add-kelompok' onclick='addKelompokItem();'><i class='fa fa-plus'></i></button>
            <button type='button' class='btn btn-danger btn-hapus-kelompok' onclick='hapusKelompokItem(this);'><i class='fa fa-trash'></i></button>
@@ -704,7 +707,9 @@
  clearEmailCustomer();
 
  function validasi()
-  { var no_telp_customer = [];
+  { var error = 0;
+
+    var no_telp_customer = [];
     try
      { var a = document.querySelectorAll('#list-no_telp_customer > div > input');
        for(var i=0; i<a.length; i++)
@@ -763,6 +768,38 @@
      { data['email_customer'] = null;
      }
 
+    var a = document.querySelectorAll('.uraian');
+    for(var i=0; i<a.length; i++)
+     { if(a[i].value == '')
+        { error++;
+          a[i].parentNode.querySelector('.error').innerHTML = 'Wajib diisi!';
+        }
+       else
+        { a[i].parentNode.querySelector('.error').innerHTML = '';
+        }
+       if(document.querySelectorAll('.qty')[i].value == '')
+        { error++;
+          document.querySelectorAll('.qty')[i].parentNode.querySelector('.error').innerHTML = 'Wajib diisi!';
+        }
+       else
+        { document.querySelectorAll('.qty')[i].parentNode.querySelector('.error').innerHTML = '';
+        }
+       if(document.querySelectorAll('.satuan')[i].value == '')
+        { error++;
+          document.querySelectorAll('.satuan')[i].parentNode.querySelector('.error').innerHTML = 'Wajib diisi!';
+        }
+       else
+        { document.querySelectorAll('.satuan')[i].parentNode.querySelector('.error').innerHTML = '';
+        }
+       if(document.querySelectorAll('.harga')[i].value == '')
+        { error++;
+          document.querySelectorAll('.harga')[i].parentNode.querySelector('.error').innerHTML = 'Wajib diisi!';
+        }
+       else
+        { document.querySelectorAll('.harga')[i].parentNode.querySelector('.error').innerHTML = '';
+        }
+     }
+
     var a = document.getElementsByClassName('fieldku');
     for(var loop=0; loop<a.length; loop++)
      { if(a[loop].value !== '')
@@ -783,7 +820,6 @@
         { data[a[loop].id] = null;
         }
      }
-    var error = 0;
     for(var loop=0; loop<FieldRequired.length; loop++)
      { if(document.getElementById(FieldRequired[loop].field).value == '')
         { error++;
@@ -1764,7 +1800,10 @@
     var tr = document.createElement('tr');
     tr.innerHTML = `
      <td style='text-align:right;'></td>
-     <td><input type='text' class='form-control uraian'></td>
+     <td>
+      <input type='text' class='form-control uraian'>
+      <div class='error'></div>
+     </td>
      <td>
       <input type='text' class='form-control qty' onkeypress='return hanyaAngka(this);' onkeyup='hitungSubTotal(this);' onchange='hitungSubTotal(this);' onfocus='this.select();' style='text-align:right;'>
       <div class='error'></div>
