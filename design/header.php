@@ -56,14 +56,14 @@
    }
   .skin-blue .main-header .navbar
    { text-align : center;
-     box-shadow : 0px 1px 5px black;
-     background-color : #1875d2;
+     border-bottom : 5px #ad8020 solid;
+     background-color : #112b46;
    }
   .skin-blue .main-header .navbar .sidebar-toggle:hover
    { background-color : #064381;
    }
   .skin-blue .main-header li.user-header
-   { background-color : #1875d2;
+   { background-color : #112b46;
    }
   .skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side
    { z-index : 1031;
