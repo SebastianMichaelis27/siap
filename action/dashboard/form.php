@@ -1,5 +1,6 @@
 <?php
  include("../bjksadkhrej121lkjkjk.php");
+ include("../../design/url.php");
 
  $now = date('Y-m-d');
  $masa_lampau = date('Y-m-d', strtotime('-7 day', strtotime($now)));
@@ -157,7 +158,7 @@
  </div>
 </div>
 
-<script type="text/javascript" src="bower_components/chartjs/dist/Chart.js"></script>
+<script type="text/javascript" src="<?= $url_asset ?>/bower_components/chartjs/dist/Chart.js"></script>
 
 <script>
 

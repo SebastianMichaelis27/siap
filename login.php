@@ -91,7 +91,7 @@
  <div class='loader-block'></div>
 
  <div id='login'>
-  <img id='img-logo' src='dist/img/logo.png' onload='onLoadLogo();' style='width:100%;'>
+  <img id='img-logo' src='<?= $url ?>/dist/img/logo.png?v=<?= $v ?>' onload='onLoadLogo();' style='width:100%;'>
   <div id='form-input'>
    <input type='text' autocomplete='new-password' id='username' autofocus  placeholder='Username'>
    <input type='password' autocomplete='new-password' id='password' placeholder='Password' onkeypress='loginEvent(event)'>

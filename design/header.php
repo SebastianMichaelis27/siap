@@ -5,20 +5,20 @@
  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
  <title>Persediaan</title>
  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
- <link href='https://smartsolutiondevelopment.com/siap-mie/dist/img/favicon.png' rel='icon'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/bootstrap/dist/css/bootstrap.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/font-awesome/css/font-awesome.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/Ionicons/css/ionicons.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/timepicker/bootstrap-timepicker.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/siap-mie/dist/css/AdminLTE.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/siap-mie/dist/css/skins/_all-skins.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/bootstrap-daterangepicker/daterangepicker.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/siap-mie/dist/css/googlefonts.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/bower_components/select2/dist/css/select2.min.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/siap-mie/style/style-modal.css'>
- <link rel='stylesheet' href='https://smartsolutiondevelopment.com/siap-mie/style/style-loading.css'>
+ <link href='<?= $url ?>/dist/img/favicon.png' rel='icon'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/bootstrap/dist/css/bootstrap.min.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/font-awesome/css/font-awesome.min.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/Ionicons/css/ionicons.min.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/timepicker/bootstrap-timepicker.min.css'>
+ <link rel='stylesheet' href='<?= $url ?>/dist/css/AdminLTE.min.css'>
+ <link rel='stylesheet' href='<?= $url ?>/dist/css/skins/_all-skins.min.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/bootstrap-daterangepicker/daterangepicker.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css'>
+ <link rel='stylesheet' href='<?= $url ?>/dist/css/googlefonts.css'>
+ <link rel='stylesheet' href='<?= $url_asset ?>/bower_components/select2/dist/css/select2.min.css'>
+ <link rel='stylesheet' href='<?= $url ?>/style/style-modal.css'>
+ <link rel='stylesheet' href='<?= $url ?>/style/style-loading.css'>
  <style>
   .select2-container
    { min-width: 100% !important;
@@ -184,12 +184,12 @@
        </li>
        <li class='dropdown user user-menu'>
         <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
-         <img src='https://smartsolutiondevelopment.com/siap-mie/dist/img/admin.png' class='user-image' alt='User Image'>
+         <img src='<?= $url ?>/dist/img/admin.png' class='user-image' alt='User Image'>
          <span class='hidden-xs'><?= $_SESSION['username'] ?></span>
         </a>
         <ul class='dropdown-menu'>
          <li class='user-header'>
-          <img src='https://smartsolutiondevelopment.com/siap-mie/dist/img/admin.png' class='img-circle' alt='User Image'>
+          <img src='<?= $url ?>/dist/img/admin.png' class='img-circle' alt='User Image'>
           <p>User</p>
          </li>
          <li class='user-body'>
@@ -218,7 +218,7 @@
     <section class='sidebar'>
      <div class='user-panel'>
       <div class='image'>
-       <img id='user-image' alt='User Image' style='margin-top:25px;' src='https://smartsolutiondevelopment.com/siap-mie/dist/img/logo.png'>
+       <img id='user-image' alt='User Image' style='margin-top:25px;' src='<?= $url ?>/dist/img/logo.png'>
       </div>
      </div>
      <ul class='sidebar-menu' id='menu-utama' data-widget='tree'></ul>
@@ -228,21 +228,21 @@
     <div class='loader'></div>
     <div class='loader-block'></div>
 
-    <script src='https://smartsolutiondevelopment.com/bower_components/jquery.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/jquery-ui/jquery-ui.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/raphael/raphael.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/morris.js/morris.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/jquery-knob/dist/jquery.knob.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/moment/min/moment.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/bootstrap-daterangepicker/daterangepicker.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/fastclick/lib/fastclick.js'></script>
-    <script src='https://smartsolutiondevelopment.com/siap-mie/dist/js/adminlte.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/siap-mie/dist/js/demo.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/select2/dist/js/select2.full.min.js'></script>
-    <script src='https://smartsolutiondevelopment.com/bower_components/timepicker/bootstrap-timepicker.min.js' type='text/javascript'></script>
-    <script src='https://smartsolutiondevelopment.com/siap-mie/dist/js/js-function.js' type='text/javascript'></script>
+    <script src='<?= $url_asset ?>/bower_components/jquery.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/jquery-ui/jquery-ui.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/raphael/raphael.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/morris.js/morris.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/jquery-knob/dist/jquery.knob.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/moment/min/moment.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/bootstrap-daterangepicker/daterangepicker.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/jquery-slimscroll/jquery.slimscroll.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/fastclick/lib/fastclick.js'></script>
+    <script src='<?= $url ?>/dist/js/adminlte.min.js'></script>
+    <script src='<?= $url ?>/dist/js/demo.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/select2/dist/js/select2.full.min.js'></script>
+    <script src='<?= $url_asset ?>/bower_components/timepicker/bootstrap-timepicker.min.js' type='text/javascript'></script>
+    <script src='<?= $url ?>/dist/js/js-function.js' type='text/javascript'></script>
