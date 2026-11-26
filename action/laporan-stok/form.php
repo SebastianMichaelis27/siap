@@ -32,7 +32,7 @@
        <select class='form-control fieldku select2' style='width:100%;' onchange='tampilListView();' id='gudang_id'>
         <?= $list_gudang ?>
        </select>
-       <div style='color:red' class='error' id='error-gudang_id'></div>
+       <div class='error' id='error-gudang_id'></div>
       </div>
      </div>
     </div>
@@ -43,7 +43,7 @@
       </div>
       <div class='col-md-8'>
        <input type='text' class='form-control' onkeyup='tampilListView();' onchange='tampilListView();' id='nama_barang'>
-       <div style='color:red' class='error' id='error-nama_barang'></div>
+       <div class='error' id='error-nama_barang'></div>
       </div>
      </div>
     </div>

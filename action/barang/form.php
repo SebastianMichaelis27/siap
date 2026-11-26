@@ -142,7 +142,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='kode'>
-          <div style='color:red' class='error' id='error-kode'></div>
+          <div class='error' id='error-kode'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -151,7 +151,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='nama'>
-          <div style='color:red' class='error' id='error-nama'></div>
+          <div class='error' id='error-nama'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -162,7 +162,7 @@
           <select class='form-control fieldku' autocomplete='new-password' style='width:100%;' multiple id='kategori'>
            <?= $list_kategori ?>
           </select>
-          <div style='color:red' class='error' id='error-kategori'></div>
+          <div class='error' id='error-kategori'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -171,7 +171,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='merek'>
-          <div style='color:red' class='error' id='error-merek'></div>
+          <div class='error' id='error-merek'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -180,7 +180,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='model'>
-          <div style='color:red' class='error' id='error-model'></div>
+          <div class='error' id='error-model'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -189,7 +189,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='tipe'>
-          <div style='color:red' class='error' id='error-tipe'></div>
+          <div class='error' id='error-tipe'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -198,7 +198,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='jenis'>
-          <div style='color:red' class='error' id='error-jenis'></div>
+          <div class='error' id='error-jenis'></div>
          </div>
         </div>
        </div>
@@ -212,7 +212,7 @@
            <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' style='text-align:right;' id='kapasitas_pk'>
            <div>PK</div>
           </div>
-          <div style='color:red' class='error' id='error-kapasitas_pk'></div>
+          <div class='error' id='error-kapasitas_pk'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -221,7 +221,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' style='text-align:right;' id='btuh'>
-          <div style='color:red' class='error' id='error-btuh'></div>
+          <div class='error' id='error-btuh'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -230,7 +230,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='ukuran'>
-          <div style='color:red' class='error' id='error-ukuran'></div>
+          <div class='error' id='error-ukuran'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -241,7 +241,7 @@
           <select class='form-control fieldku' style='width:100%;' id='satuan_id'>
            <?= $list_satuan ?>
           </select>
-          <div style='color:red' class='error' id='error-satuan_id'></div>
+          <div class='error' id='error-satuan_id'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -250,7 +250,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='harga_beli'>
-          <div style='color:red' class='error' id='error-harga_beli'></div>
+          <div class='error' id='error-harga_beli'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -259,7 +259,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='harga_jual'>
-          <div style='color:red' class='error' id='error-harga_jual'></div>
+          <div class='error' id='error-harga_jual'></div>
          </div>
         </div>
        </div>
@@ -280,7 +280,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='unit'>
-          <div style='color:red' class='error' id='error-unit'></div>
+          <div class='error' id='error-unit'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -289,7 +289,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='cap'>
-          <div style='color:red' class='error' id='error-cap'></div>
+          <div class='error' id='error-cap'></div>
          </div>
         </div>
        </div>
@@ -300,7 +300,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' autocomplete='new-password' class='form-control fieldku' id='description'>
-          <div style='color:red' class='error' id='error-description'></div>
+          <div class='error' id='error-description'></div>
          </div>
         </div>
        </div>

@@ -21,11 +21,11 @@
       </div>
       <div class='col-md-4'>
        <input type='text' autocomplete='new-password' class='form-control fieldku' id='judul'>
-       <div style='color:red' class='error' id='error-judul'></div>
+       <div class='error' id='error-judul'></div>
       </div>
      </div>
      <button type='button' class='btn btn-success' style='margin-top:10px;' onclick='tambahCatatan();'><i class='fa fa-plus'></i> Tambah Catatan</button>
-     <div style='color:red' class='error' id='error-catatan'></div>
+     <div class='error' id='error-catatan'></div>
      <div id='list-catatan'></div>
     </div>
    </div>

@@ -31,7 +31,7 @@
          <select class='form-control fieldku' style='width:100%;' onchange='tampilListView();' id='cabang_id'>
           <?= $list_cabang ?>
          </select>
-         <div style='color:red' class='error' id='error-cabang_id'></div>
+         <div class='error' id='error-cabang_id'></div>
         </div>
        </div>
        <div class='row'>
@@ -40,7 +40,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='nama'>
-         <div style='color:red' class='error' id='error-nama'></div>
+         <div class='error' id='error-nama'></div>
         </div>
        </div>
       </div>
@@ -51,7 +51,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='alamat'>
-         <div style='color:red' class='error' id='error-alamat'></div>
+         <div class='error' id='error-alamat'></div>
         </div>
        </div>
       </div>

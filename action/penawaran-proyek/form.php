@@ -177,6 +177,30 @@
     grid-template-columns : 1fr;
     gap : 5px;
   }
+ .kelompok-item
+  { margin-top : 30px;
+  }
+ .group-border
+  { border : 1px solid silver;
+    padding : 15px;
+  }
+ .group-title
+  { display : grid;
+    grid-template-columns : auto 1fr auto;
+    align-items : center;
+    gap : 5px;
+    position : absolute;
+    top : -17px;
+    background : white;
+  }
+ .group-body
+  { margin-top : 10px;
+  }
+ @media only screen and (min-width : 500px)
+  { .group-title
+     { grid-template-columns : auto 300px auto;
+     }
+  }
  @media only screen and (min-width : 800px)
   { .kontainer
      { grid-template-columns : 1fr 1fr;
@@ -226,7 +250,7 @@
             <select class='form-control fieldku' style='width:100%;' onchange='tampilListView();' id='cabang_id'>
              <?= $list_cabang ?>
             </select>
-            <div style='color:red' class='error' id='error-cabang_id'></div>
+            <div class='error' id='error-cabang_id'></div>
            </div>
           </div>
           <div id='div-nomor'></div>
@@ -239,7 +263,7 @@
              <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal'>
              <button type='button' class='btn btn-default' style='width:40px;' onclick="document.getElementById('tanggal').value = '';"><i class='fa fa-close'></i></button>
             </div>
-            <div style='color:red' class='error' id='error-tanggal'></div>
+            <div class='error' id='error-tanggal'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -250,7 +274,7 @@
             <select class='form-control fieldku' style='width:100%;' id='kata_pengantar_id'>
              <?= $list_kata_pengantar ?>
             </select>
-            <div style='color:red' class='error' id='error-kata_pengantar_id'></div>
+            <div class='error' id='error-kata_pengantar_id'></div>
            </div>
           </div>
          </div>
@@ -263,7 +287,7 @@
             <select class='form-control fieldku' style='width:100%;' id='catatan_penawaran_id'>
              <?= $list_catatan_penawaran ?>
             </select>
-            <div style='color:red' class='error' id='error-catatan_penawaran_id'></div>
+            <div class='error' id='error-catatan_penawaran_id'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -274,7 +298,7 @@
             <select class='form-control fieldku' style='width:100%;' id='tanda_tangan_id'>
              <?= $list_tanda_tangan ?>
             </select>
-            <div style='color:red' class='error' id='error-tanda_tangan_id'></div>
+            <div class='error' id='error-tanda_tangan_id'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -286,7 +310,7 @@
              <input type='text' class='form-control fieldku batas_waktu' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onfocus='this.select();' style='text-align:right;' id='batas_waktu'>
              <div style='padding-top:7px;'>Hari</div>
             </div>
-            <div style='color:red' class='error' id='error-batas_waktu'></div>
+            <div class='error' id='error-batas_waktu'></div>
            </div>
           </div>
          </div>
@@ -310,8 +334,8 @@
              <button type='button' class='btn btn-warning' style='width:40px;' onclick='cariCustomer();'><i class='fa fa-search'></i></button>
             </div>
             <input type='hidden' class='fieldku' autocomplete='new-password' id='customer_id'>
-            <div style='color:red' class='error' id='error-customer_id'></div>
-            <div style='color:red' class='error' id='error-nama_customer'></div>
+            <div class='error' id='error-customer_id'></div>
+            <div class='error' id='error-nama_customer'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -320,7 +344,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' class='form-control fieldku fieldku2' autocomplete='new-password' id='alamat_customer'>
-            <div style='color:red' class='error' id='error-alamat_customer'></div>
+            <div class='error' id='error-alamat_customer'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -349,35 +373,52 @@
             <div id="list-email_customer" style="display:grid; grid-template-rows:1fr; gap:5px;"></div>
            </div>
           </div>
-          <div class='row' style='margin-top:5px;'>
-           <div class='col-md-4' style='padding-top:7px;'>
-            <label>Credit Limit *</label>
-           </div>
-           <div class='col-md-8'>
-            <input type='text' class='form-control fieldku fieldku2' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='credit_limit_customer'>
-            <div style='color:red' class='error' id='error-credit_limit_customer'></div>
-           </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div id='list-kelompok'>
+      <div class='row kelompok-item'>
+       <div class='col-md-12'>
+        <div class='group-border'>
+         <div class='group-title'>
+          <div class='group-number'>I.</div>
+          <input type='text' class='form-control' style='width:100%;' placeholder='Kelompok Item Pekerjaan'>
+          <div style='display:grid; grid-template-columns:auto auto; gap:5px;'>
+           <button type='button' class='btn btn-success btn-add-kelompok' onclick='addKelompokItem();'><i class='fa fa-plus'></i></button>
+           <button type='button' class='btn btn-danger btn-hapus-kelompok' onclick='hapusKelompokItem(this);'><i class='fa fa-trash'></i></button>
+          </div>
+         </div>
+         <div class='group-body'>
+          <button type='button' class='btn btn-success' onclick='addItem(this);'><i class='fa fa-plus'></i> Item</button>
+          <div class='responsiveku'>
+           <table class='table table-bordered'>
+            <thead>
+             <tr>
+              <th style='width:70px; min-width:70px; max-width:70px; text-align:center;'>No.</th>
+              <th style='min-width:300px;'>Uraian Pekerjaan</th>
+              <th style='width:70px; min-width:70px; max-width:70px; text-align:center;'>Qty</th>
+              <th style='width:150px; min-width:150px; max-width:150px;'>Satuan</th>
+              <th style='width:120px; min-width:120px; max-width:120px; text-align:center;'>Harga</th>
+              <th style='width:120px; min-width:120px; max-width:120px; text-align:center;'>Total</th>
+              <th style='width:55px; min-width:55px; max-width:55px; text-align:center;'>Del</th>
+             </tr>
+            </thead>
+            <tbody></tbody>
+           </table>
           </div>
          </div>
         </div>
        </div>
       </div>
      </div>
-     <div class='row' style='margin-top:15px;'>
-      <div class='col-md-12'>
-       <div style='border:1px solid silver; padding:15px;'>
-        <div style='display:inline-block; font-weight:bold; position:absolute; top:-10px; background:white;'>Item</div>
-        <div class='row'>
-         <div class='col-md-12'>
-          <button type='button' class='btn btn-success' onclick='addBarang();'><i class='fa fa-plus'></i> Tambah Barang</button>
-          <button type='button' class='btn btn-warning' onclick='addJasa();'><i class='fa fa-plus'></i> Tambah Jasa</button>
-          <div class='error' style='color:red;' id='error-detail'></div>
-          <div class='responsiveku'>
-           <div id='div-item'></div>
-          </div>
-         </div>
-        </div>
-       </div>
+     <div class='row' style='margin-top:5px;'>
+      <div class='col-md-2 col-md-offset-8' style='padding-top:7px;'>
+       <label>Total</label>
+      </div>
+      <div class='col-md-2'>
+       <input type='text' class='form-control fieldku' autocomplete='new-password' style='text-align:right;' readonly id='total'>
       </div>
      </div>
     </div>
@@ -479,7 +520,7 @@
           <select class='form-control fieldku3' style='width:100%;' id='customer-jenis_customer_id'>
            <?= $list_jenis_customer ?>
           </select>
-          <div style='color:red' class='error' id='error-customer-jenis_customer_id'></div>
+          <div class='error' id='error-customer-jenis_customer_id'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -488,7 +529,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='customer-nama'>
-          <div style='color:red' class='error' id='error-customer-nama'></div>
+          <div class='error' id='error-customer-nama'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -497,7 +538,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='customer-alamat'>
-          <div style='color:red' class='error' id='error-customer-alamat'></div>
+          <div class='error' id='error-customer-alamat'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -522,15 +563,6 @@
          </div>
          <div class='col-md-8'>
           <div id="list-email" style="display:grid; grid-template-rows:1fr; gap:5px;"></div>
-         </div>
-        </div>
-        <div class='row' style='margin-top:5px;'>
-         <div class='col-md-4' style='padding-top:7px;'>
-          <label>Credit Limit *</label>
-         </div>
-         <div class='col-md-8'>
-          <input type='text' class='form-control fieldku3' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='customer-credit_limit'>
-          <div style='color:red' class='error' id='error-customer-credit_limit'></div>
          </div>
         </div>
        </div>
@@ -653,7 +685,6 @@
   {field : 'kata_pengantar_id', label : 'Kata Pengantar'},
   {field : 'tanda_tangan_id', label : 'Tanda Tangan'},
   {field : 'batas_waktu', label : 'Batas Waktu'},
-  {field : 'karyawan_id', label : 'Sales'},
   {field : 'customer_id', label : 'Customer'},
   {field : 'nama_customer', label : 'Nama Customer'},
   {field : 'alamat_customer', label : 'Alamat Customer'},
@@ -667,7 +698,6 @@
 
  makeSelect2Search('karyawan_id', '<?= $_POST['url'] ?>/action/<?= $_POST['form'] ?>/get-karyawan.php', { username: '<?= $_POST['username'] ?>', users_level_id: '<?= $_POST['users_level_id'] ?>', cabang_id: '<?= $_POST['cabang_id'] ?>', token: '<?= $_POST['token'] ?>' });
 
- clearBarang();
  tampilListView();
  clearNoTelpCustomer();
  clearNoWaCustomer();
@@ -742,7 +772,7 @@
           else if(a[loop].id == 'sub_total' || a[loop].id == 'persen_diskon' || a[loop].id == 'diskon' || a[loop].id == 'dpp' || a[loop].id == 'persen_ppn' || a[loop].id == 'ppn' || a[loop].id == 'total')
            { data[a[loop].id] = normal(a[loop].value) * 1;
            }
-          else if(a[loop].id == 'batas_waktu' || a[loop].id == 'credit_limit_customer' || a[loop].id == 'sub_total' || a[loop].id == 'persen_diskon' || a[loop].id == 'diskon' || a[loop].id == 'dpp' || a[loop].id == 'persen_ppn' || a[loop].id == 'ppn' || a[loop].id == 'total')
+          else if(a[loop].id == 'batas_waktu' || a[loop].id == 'sub_total' || a[loop].id == 'persen_diskon' || a[loop].id == 'diskon' || a[loop].id == 'dpp' || a[loop].id == 'persen_ppn' || a[loop].id == 'ppn' || a[loop].id == 'total')
            { data[a[loop].id] = normal(a[loop].value);
            }
           else
@@ -753,36 +783,6 @@
         { data[a[loop].id] = null;
         }
      }
-    var detail = [];
-    var jumlah = 0;
-    var a = document.getElementsByClassName('detail_id');
-    for(var i=0; i<a.length; i++)
-     { if(normal(document.getElementsByClassName('jumlah')[i].value) * 1 > 0)
-        { var valueToPush = {};
-          valueToPush.id = document.getElementsByClassName('detail_id')[i].value;
-          valueToPush.barang_id = document.getElementsByClassName('barang_id')[i].value;
-          valueToPush.jasa_id = document.getElementsByClassName('jasa_id')[i].value;
-          valueToPush.nama_produk = document.getElementsByClassName('nama_produk')[i].value;
-          valueToPush.satuan = document.getElementsByClassName('satuan')[i].value;
-          valueToPush.harga = normal(document.getElementsByClassName('harga')[i].value) * 1;
-          valueToPush.jenis_ppn = document.getElementsByClassName('jenis_ppn')[i].value;
-          valueToPush.harga_sebelum_ppn = normal(document.getElementsByClassName('harga_sebelum_ppn')[i].value) * 1;
-          valueToPush.jumlah = normal(document.getElementsByClassName('jumlah')[i].value) * 1;
-          valueToPush.sub_total = normal(document.getElementsByClassName('sub_total')[i].value) * 1;
-          valueToPush.sub_total_sebelum_ppn = normal(document.getElementsByClassName('sub_total_sebelum_ppn')[i].value) * 1;
-          valueToPush.diskon_item = normal(document.getElementsByClassName('diskon_item')[i].value) * 1;
-          valueToPush.diskon_item_detail = document.getElementsByClassName('diskon_item_detail')[i].value;
-          valueToPush.diskon_faktur = normal(document.getElementsByClassName('diskon_faktur')[i].value) * 1;
-          valueToPush.dpp = normal(document.getElementsByClassName('dpp')[i].value) * 1;
-          valueToPush.persen_ppn = normal(document.getElementById('persen_ppn').value) * 1;
-          valueToPush.nominal_ppn = normal(document.getElementsByClassName('nominal_ppn')[i].value) * 1;
-          valueToPush.total = normal(document.getElementsByClassName('total')[i].value) * 1;
-          detail.push(valueToPush);
-          jumlah += normal(document.getElementsByClassName('jumlah')[i].value) * 1;
-        }
-     }
-    data['detail'] = detail;
-    data['jumlah'] = jumlah;
     var error = 0;
     for(var loop=0; loop<FieldRequired.length; loop++)
      { if(document.getElementById(FieldRequired[loop].field).value == '')
@@ -919,7 +919,6 @@
     for(var loop=0; loop<a.length; loop++)
      { a[loop].innerHTML = '';
      }
-    clearBarang();
     clearNoTelpCustomer();
     clearNoWaCustomer();
     clearEmailCustomer();
@@ -955,7 +954,6 @@
 
  function edit(label)
   { is_edit = 1;
-    clearBarang();
     var list = document.getElementsByClassName(label.className);
     list = [].slice.call(list);
     var position = list.indexOf(label);
@@ -1377,7 +1375,6 @@
   {field : 'jenis_customer_id', label : 'Jenis Customer'},
   {field : 'nama', label : 'Nama Customer'},
   {field : 'alamat', label : 'Alamat'},
-  {field : 'credit_limit', label : 'Credit Limit'},
  ];
 
  clearNoTelp();
@@ -1449,9 +1446,6 @@
      { if(a[loop].value !== '')
         { if(a[loop].id.toString().replaceAll('customer-', '') == 'tanggal')
            { data[a[loop].id.toString().replaceAll('customer-', '')] = normalisasi_tanggal(a[loop].value);
-           }
-          else if(a[loop].id.toString().replaceAll('customer-', '') == 'credit_limit')
-           { data[a[loop].id.toString().replaceAll('customer-', '')] = normal(a[loop].value);
            }
           else
            { data[a[loop].id.toString().replaceAll('customer-', '')] = a[loop].value;
@@ -1763,5 +1757,136 @@
   }
 
  //Email----------------------------------------------------------------------------------------------------------------
+
+ //Item-----------------------------------------------------------------------------------------------------------------
+ function addItem(element)
+  { var tbody = element.parentNode.querySelector('table tbody');
+    var tr = document.createElement('tr');
+    tr.innerHTML = `
+     <td style='text-align:right;'></td>
+     <td><input type='text' class='form-control uraian'></td>
+     <td>
+      <input type='text' class='form-control qty' onkeypress='return hanyaAngka(this);' onkeyup='hitungSubTotal(this);' onchange='hitungSubTotal(this);' onfocus='this.select();' style='text-align:right;'>
+      <div class='error'></div>
+     </td>
+     <td>
+      <input type='text' class='form-control satuan'>
+      <div class='error'></div>
+     </td>
+     <td>
+      <input type='text' class='form-control harga' onkeypress='return hanyaAngka(this);' onkeyup='hitungSubTotal(this);' onchange='hitungSubTotal(this);' onfocus='this.select();' style='text-align:right;'>
+      <div class='error'></div>
+     </td>
+     <td><input type='text' class='form-control total' readonly style='text-align:right;'></td>
+     <td style='text-align:center;'><button type='button' class='btn btn-danger' title='Hapus Item' onclick='hapusItem(this);'><i class='fa fa-trash'></i></button></td>
+    `;
+    tbody.appendChild(tr);
+    setNoItem(tbody);
+  }
+
+ function setNoItem(tbody)
+  { var a = tbody.querySelectorAll('tr');
+    for(var i=0; i<a.length; i++)
+     { a[i].querySelector('td').innerHTML = (i + 1);
+     }
+  }
+
+ function hapusItem(element)
+  { var tbody = element.parentNode.parentNode.parentNode;
+    element.parentNode.parentNode.remove();
+    setNoItem(tbody);
+    hitungTotal();
+  }
+
+ function hitungSubTotal(element)
+  { fnomor(element);
+    var parent = element.parentNode.parentNode;
+    var qty = normal(parent.querySelector('.qty').value) * 1;
+    var harga = normal(parent.querySelector('.harga').value) * 1;
+    var sub_total = qty * harga;
+    parent.querySelector('.total').value = formatnomor(sub_total.toFixed(2).toString().replaceAll('.', ',').replaceAll('-', ''));
+    hitungTotal();
+  }
+
+ function hitungTotal()
+  { var total = 0;
+    var a = document.querySelectorAll('.kelompok-item .total');
+    for(var i=0; i<a.length; i++)
+     { total += normal(a[i].value) * 1;
+     }
+    document.getElementById('total').value = formatnomor(total.toFixed(2).toString().replaceAll('.', ',').replaceAll('-', ''));
+  }
+ //Item-----------------------------------------------------------------------------------------------------------------
+
+ //Kelompok Item--------------------------------------------------------------------------------------------------------
+
+ var kelompok_item = document.querySelector('.kelompok-item').innerHTML;
+
+ function addKelompokItem()
+  { var new_element = document.createElement('div');
+    new_element.className = 'row kelompok-item';
+    new_element.innerHTML = kelompok_item;
+    document.querySelector('#list-kelompok').appendChild(new_element);
+    setNoKelompok();
+  }
+
+ function hapusKelompokItem(element)
+  { if(document.querySelectorAll('.group-number').length > 1)
+     { element.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+       setNoKelompok();
+     }
+  }
+
+ function setNoKelompok()
+  { var a = document.querySelectorAll('.group-number');
+    for(var i=0; i<a.length; i++)
+     { a[i].innerHTML = angkaKeRomawi(i + 1) + '.';
+       if(i < a.length - 1)
+        { a[i].parentNode.parentNode.querySelector('.btn-add-kelompok').style['display'] = 'none';
+          a[i].parentNode.parentNode.querySelector('.btn-hapus-kelompok').style['display'] = 'block';
+        }
+       else
+        { a[i].parentNode.parentNode.querySelector('.btn-add-kelompok').style['display'] = 'block';
+        }
+     }
+    if(document.querySelectorAll('.group-number').length == 1)
+     { document.querySelector('.btn-hapus-kelompok').style['display'] = 'none';
+     }
+    else
+     { document.querySelector('.btn-hapus-kelompok').style['display'] = 'block';
+     }
+  }
+ setNoKelompok();
+
+ function angkaKeRomawi(angka)
+  { if(!Number.isInteger(angka) || angka < 1)
+     { return;
+     }
+    const romawi = [
+     { nilai: 1000, simbol: "M" },
+     { nilai: 900, simbol: "CM" },
+     { nilai: 500, simbol: "D" },
+     { nilai: 400, simbol: "CD" },
+     { nilai: 100, simbol: "C" },
+     { nilai: 90, simbol: "XC" },
+     { nilai: 50, simbol: "L" },
+     { nilai: 40, simbol: "XL" },
+     { nilai: 10, simbol: "X" },
+     { nilai: 9, simbol: "IX" },
+     { nilai: 5, simbol: "V" },
+     { nilai: 4, simbol: "IV" },
+     { nilai: 1, simbol: "I" }
+    ];
+    let hasil = "";
+    for(let item of romawi)
+     { while (angka >= item.nilai)
+        { hasil += item.simbol;
+          angka -= item.nilai;
+        }
+     }
+    return hasil;
+  }
+
+ //Kelompok Item--------------------------------------------------------------------------------------------------------
 
 </script>

@@ -23,7 +23,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='jenis_supplier'>
-         <div style='color:red' class='error' id='error-jenis_supplier'></div>
+         <div class='error' id='error-jenis_supplier'></div>
         </div>
        </div>
       </div>

@@ -23,7 +23,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='jasa'>
-         <div style='color:red' class='error' id='error-jasa'></div>
+         <div class='error' id='error-jasa'></div>
         </div>
        </div>
       </div>
@@ -34,7 +34,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='harga'>
-         <div style='color:red' class='error' id='error-harga'></div>
+         <div class='error' id='error-harga'></div>
         </div>
        </div>
       </div>

@@ -31,7 +31,7 @@
          <select class='form-control fieldku' style='width:100%;' id='jenis_supplier_id'>
           <?= $list_jenis_supplier ?>
          </select>
-         <div style='color:red' class='error' id='error-jenis_supplier_id'></div>
+         <div class='error' id='error-jenis_supplier_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -40,7 +40,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='nama'>
-         <div style='color:red' class='error' id='error-nama'></div>
+         <div class='error' id='error-nama'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -49,7 +49,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='alamat'>
-         <div style='color:red' class='error' id='error-alamat'></div>
+         <div class='error' id='error-alamat'></div>
         </div>
        </div>
       </div>

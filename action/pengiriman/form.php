@@ -48,7 +48,7 @@
          <select class='form-control fieldku' style='width:100%;' onchange='changeGudang();' id='cabang_id'>
           <?= $list_cabang ?>
          </select>
-         <div style='color:red' class='error' id='error-cabang_id'></div>
+         <div class='error' id='error-cabang_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -60,7 +60,7 @@
           <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal'>
           <button type='button' class='btn btn-default' style='width:40px;' onclick="document.getElementById('tanggal').value = '';"><i class='fa fa-close'></i></button>
          </div>
-         <div style='color:red' class='error' id='error-tanggal'></div>
+         <div class='error' id='error-tanggal'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -73,7 +73,7 @@
           <option value='Diantar'>Diantar</option>
           <option value='Diambil'>Diambil Customer</option>
          </select>
-         <div style='color:red' class='error' id='error-jenis_pengiriman'></div>
+         <div class='error' id='error-jenis_pengiriman'></div>
         </div>
        </div>
       </div>

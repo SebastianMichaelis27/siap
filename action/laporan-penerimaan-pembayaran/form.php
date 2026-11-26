@@ -43,7 +43,7 @@
         <div>s/d</div>
         <input type='text' autocomplete='new-password' class='form-control tanggal' onchange='setTglSampai(this); tampilListView();' id='sampai_tanggal' value='<?= date('d-m-Y', strtotime($now)) ?>'>
        </div>
-       <div style='color:red' class='error' id='error-tanggal'></div>
+       <div class='error' id='error-tanggal'></div>
       </div>
      </div>
      <div class='row' id='row-cabang_id'>
@@ -54,7 +54,7 @@
        <select class='form-control' style='width:100%;' id='cabang_id' onchange='tampilListView();'>
         <?= $list_cabang ?>
        </select>
-       <div style='color:red' class='error' id='error-cabang_id'></div>
+       <div class='error' id='error-cabang_id'></div>
       </div>
      </div>
     </div>
@@ -67,7 +67,7 @@
        <select class='form-control' style='width:100%;' id='metode_pembayaran_id' onchange='tampilListView();'>
         <?= $list_metode_pembayaran ?>
        </select>
-       <div style='color:red' class='error' id='error-metode_pembayaran_id'></div>
+       <div class='error' id='error-metode_pembayaran_id'></div>
       </div>
      </div>
     </div>

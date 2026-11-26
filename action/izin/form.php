@@ -31,7 +31,7 @@
          <select class='form-control fieldku select2' style='width:100%;' onchange='changeCabang();' id='cabang_id'>
           <?= $list_cabang ?>
          </select>
-         <div style='color:red' class='error' id='error-cabang_id'></div>
+         <div class='error' id='error-cabang_id'></div>
         </div>
        </div>
        <div class='row' style='margin-bottom:5px;'>
@@ -42,7 +42,7 @@
          <select class='form-control fieldku' style='width:100%;' id='karyawan_id'>
           <option></option>
          </select>
-         <div style='color:red' class='error' id='error-karyawan_id'></div>
+         <div class='error' id='error-karyawan_id'></div>
         </div>
        </div>
        <div class='row' style='margin-bottom:5px;'>
@@ -56,8 +56,8 @@
           <input type='text' class='form-control fieldku tanggal' readonly style='background:white;' onchange='setTglDari(this);' id='sampai_tanggal'>
           <button type='button' class='btn btn-default' style='height:34px;' onclick="clearPeriodeTanggal('tanggal')"><i class='fa fa-close'></i></button>
          </div>
-         <div style='color:red' class='error' id='error-dari_tanggal'></div>
-         <div style='color:red' class='error' id='error-sampai_tanggal'></div>
+         <div class='error' id='error-dari_tanggal'></div>
+         <div class='error' id='error-sampai_tanggal'></div>
         </div>
        </div>
       </div>
@@ -75,7 +75,7 @@
           <option value='Terlambat Masuk'>Terlambat Masuk</option>
           <option value='Pulang Cepat'>Pulang Cepat</option>
          </select>
-         <div style='color:red' class='error' id='error-jenis_izin'></div>
+         <div class='error' id='error-jenis_izin'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -84,7 +84,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='keterangan'>
-         <div style='color:red' class='error' id='error-keterangan'></div>
+         <div class='error' id='error-keterangan'></div>
         </div>
        </div>
       </div>

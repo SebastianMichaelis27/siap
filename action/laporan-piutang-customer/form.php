@@ -84,7 +84,7 @@
        <select class='form-control' style='width:100%;' id='cabang_id' onchange='tampilListView();'>
         <?= $list_cabang ?>
        </select>
-       <div style='color:red' class='error' id='error-cabang_id'></div>
+       <div class='error' id='error-cabang_id'></div>
       </div>
      </div>
     </div>
@@ -115,7 +115,7 @@
           <input type='text' class='form-control fieldku4 tanggal' readonly style='background-color:white;' id='pembayaran-tanggal'>
           <button type='button' class='btn btn-default' onclick="document.getElementById('pembayaran-tanggal').value = '';"><i class='fa fa-close'></i></button>
          </div>
-         <div style='color:red' class='error' id='error-pembayaran-tanggal'></div>
+         <div class='error' id='error-pembayaran-tanggal'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -124,7 +124,7 @@
         </div>
         <div class='col-md-4'>
          <input type='text' class='form-control fieldku4' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='pembayaran-nominal'>
-         <div style='color:red' class='error' id='error-pembayaran-nominal'></div>
+         <div class='error' id='error-pembayaran-nominal'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -135,7 +135,7 @@
          <select class='form-control fieldku4' id='pembayaran-metode_pembayaran_id'>
           <?= $list_metode_pembayaran ?>
          </select>
-         <div style='color:red' class='error' id='error-pembayaran-metode_pembayaran_id'></div>
+         <div class='error' id='error-pembayaran-metode_pembayaran_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -144,7 +144,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku4' id='pembayaran-keterangan'>
-         <div style='color:red' class='error' id='error-pembayaran-keterangan'></div>
+         <div class='error' id='error-pembayaran-keterangan'></div>
         </div>
        </div>
       </div>

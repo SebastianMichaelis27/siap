@@ -157,6 +157,9 @@
   .input-disable > div
    { padding : 6px 10px 6px 10px;
    }
+  .error
+   { color : red;
+   }
  </style>
 </head>
 <body class='hold-transition skin-blue sidebar-mini' style='overflow-y:auto;'>

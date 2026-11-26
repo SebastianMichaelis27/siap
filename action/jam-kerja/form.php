@@ -32,7 +32,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='jam_kerja'>
-         <div style='color:red' class='error' id='error-jam_kerja'></div>
+         <div class='error' id='error-jam_kerja'></div>
         </div>
        </div>
       </div>
@@ -112,7 +112,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku2' id='shift-jam-kerja-shift'>
-         <div style='color:red' class='error' id='error-shift-jam-kerja-shift'></div>
+         <div class='error' id='error-shift-jam-kerja-shift'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -137,7 +137,7 @@
            <?= $list_menit ?>
           </select>
          </div>
-         <div style='color:red' class='error' id='error-shift-jam-kerja-jam_masuk'></div>
+         <div class='error' id='error-shift-jam-kerja-jam_masuk'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -175,7 +175,7 @@
            <label for='minggu' style='font-weight:normal; user-select:none; cursor:pointer;'>Minggu</label>
           </div>
          </div>
-         <div style='color:red' class='error' id='error-shift-jam-kerja-hari'></div>
+         <div class='error' id='error-shift-jam-kerja-hari'></div>
         </div>
        </div>
       </div>

@@ -19,7 +19,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='nama'>
-         <div style='color:red' class='error' id='error-nama'></div>
+         <div class='error' id='error-nama'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -28,7 +28,7 @@
         </div>
         <div class='col-md-8'>
          <textarea class='form-control fieldku' autocomplete='new-password' style='resize:none; overflow:hidden; min-height:33px;' oninput='auto_grow(this);' id='alamat'></textarea>
-         <div style='color:red' class='error' id='error-alamat'></div>
+         <div class='error' id='error-alamat'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -37,7 +37,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='kabupaten_kota'>
-         <div style='color:red' class='error' id='error-kabupaten_kota'></div>
+         <div class='error' id='error-kabupaten_kota'></div>
         </div>
        </div>
       </div>
@@ -48,7 +48,7 @@
         </div>
         <div class='col-md-8'>
          <select class='form-control fieldku' style='width:100%;' multiple id='no_telp'></select>
-         <div style='color:red' class='error' id='error-no_telp'></div>
+         <div class='error' id='error-no_telp'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -57,7 +57,7 @@
         </div>
         <div class='col-md-8'>
          <select class='form-control fieldku' style='width:100%;' multiple id='no_wa'></select>
-         <div style='color:red' class='error' id='error-no_wa'></div>
+         <div class='error' id='error-no_wa'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -66,7 +66,7 @@
         </div>
         <div class='col-md-8'>
          <select class='form-control fieldku' style='width:100%;' multiple id='email'></select>
-         <div style='color:red' class='error' id='error-email'></div>
+         <div class='error' id='error-email'></div>
         </div>
        </div>
       </div>

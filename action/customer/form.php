@@ -58,7 +58,7 @@
          <select class='form-control fieldku' style='width:100%;' id='jenis_customer_id'>
           <?= $list_jenis_customer ?>
          </select>
-         <div style='color:red' class='error' id='error-jenis_customer_id'></div>
+         <div class='error' id='error-jenis_customer_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -67,7 +67,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='nama'>
-         <div style='color:red' class='error' id='error-nama'></div>
+         <div class='error' id='error-nama'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -76,7 +76,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='alamat'>
-         <div style='color:red' class='error' id='error-alamat'></div>
+         <div class='error' id='error-alamat'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -111,7 +111,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='credit_limit'>
-         <div style='color:red' class='error' id='error-credit_limit'></div>
+         <div class='error' id='error-credit_limit'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -123,7 +123,7 @@
           <button type='button' class='btn btn-danger' onclick='cariLokasiSaya();'><i class='fa fa-map-marker'></i> Ambil Lokasi</button>
           <input type='text' class='form-control fieldku' readonly style='background:white;' id='lokasi'>
          </div>
-         <div style='color:red' class='error' id='error-lokasi'></div>
+         <div class='error' id='error-lokasi'></div>
         </div>
        </div>
       </div>

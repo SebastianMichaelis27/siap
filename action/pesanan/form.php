@@ -212,7 +212,7 @@
             <select class='form-control fieldku' style='width:100%;' onchange='tampilListView();' id='cabang_id'>
              <?= $list_cabang ?>
             </select>
-            <div style='color:red' class='error' id='error-cabang_id'></div>
+            <div class='error' id='error-cabang_id'></div>
            </div>
           </div>
           <div id='div-nomor'></div>
@@ -225,7 +225,7 @@
              <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal'>
              <button type='button' class='btn btn-default' style='width:40px;' onclick="document.getElementById('tanggal').value = '';"><i class='fa fa-close'></i></button>
             </div>
-            <div style='color:red' class='error' id='error-tanggal'></div>
+            <div class='error' id='error-tanggal'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -234,7 +234,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' autocomplete='new-password' class='form-control fieldku' id='nomor_po'>
-            <div style='color:red' class='error' id='error-nomor_po'></div>
+            <div class='error' id='error-nomor_po'></div>
            </div>
           </div>
          </div>
@@ -248,7 +248,7 @@
              <input type='text' class='form-control fieldku batas_waktu' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onfocus='this.select();' style='text-align:right;' id='batas_waktu'>
              <div style='padding-top:7px;'>Hari</div>
             </div>
-            <div style='color:red' class='error' id='error-batas_waktu'></div>
+            <div class='error' id='error-batas_waktu'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -259,7 +259,7 @@
             <select class='form-control fieldku' style='width:100%;' id='karyawan_id'>
              <option></option>
             </select>
-            <div style='color:red' class='error' id='error-karyawan_id'></div>
+            <div class='error' id='error-karyawan_id'></div>
            </div>
           </div>
          </div>
@@ -283,8 +283,8 @@
              <button type='button' class='btn btn-warning' style='width:40px;' onclick='cariCustomer();'><i class='fa fa-search'></i></button>
             </div>
             <input type='hidden' class='fieldku' autocomplete='new-password' id='customer_id'>
-            <div style='color:red' class='error' id='error-customer_id'></div>
-            <div style='color:red' class='error' id='error-nama_customer'></div>
+            <div class='error' id='error-customer_id'></div>
+            <div class='error' id='error-nama_customer'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -293,7 +293,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' class='form-control fieldku fieldku2' autocomplete='new-password' id='alamat_customer'>
-            <div style='color:red' class='error' id='error-alamat_customer'></div>
+            <div class='error' id='error-alamat_customer'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -328,7 +328,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' class='form-control fieldku fieldku2' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='credit_limit_customer'>
-            <div style='color:red' class='error' id='error-credit_limit_customer'></div>
+            <div class='error' id='error-credit_limit_customer'></div>
            </div>
           </div>
          </div>
@@ -453,7 +453,7 @@
           <select class='form-control fieldku3' style='width:100%;' id='customer-jenis_customer_id'>
            <?= $list_jenis_customer ?>
           </select>
-          <div style='color:red' class='error' id='error-customer-jenis_customer_id'></div>
+          <div class='error' id='error-customer-jenis_customer_id'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -462,7 +462,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='customer-nama'>
-          <div style='color:red' class='error' id='error-customer-nama'></div>
+          <div class='error' id='error-customer-nama'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -471,7 +471,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='customer-alamat'>
-          <div style='color:red' class='error' id='error-customer-alamat'></div>
+          <div class='error' id='error-customer-alamat'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -504,7 +504,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='customer-credit_limit'>
-          <div style='color:red' class='error' id='error-customer-credit_limit'></div>
+          <div class='error' id='error-customer-credit_limit'></div>
          </div>
         </div>
        </div>

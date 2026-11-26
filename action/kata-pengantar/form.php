@@ -23,7 +23,7 @@
         </div>
         <div class='col-md-10'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='tipe'>
-         <div style='color:red' class='error' id='error-tipe'></div>
+         <div class='error' id='error-tipe'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -32,7 +32,7 @@
         </div>
         <div class='col-md-10'>
          <textarea class='form-control fieldku' id='kata_pengantar'></textarea>
-         <div style='color:red' class='error' id='error-kata_pengantar'></div>
+         <div class='error' id='error-kata_pengantar'></div>
         </div>
        </div>
       </div>

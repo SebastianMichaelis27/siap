@@ -23,7 +23,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='nama_bank'>
-         <div style='color:red' class='error' id='error-nama_bank'></div>
+         <div class='error' id='error-nama_bank'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -32,7 +32,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='nama_rekening'>
-         <div style='color:red' class='error' id='error-nama_rekening'></div>
+         <div class='error' id='error-nama_rekening'></div>
         </div>
        </div>
       </div>
@@ -43,7 +43,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='nomor_rekening'>
-         <div style='color:red' class='error' id='error-nomor_rekening'></div>
+         <div class='error' id='error-nomor_rekening'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -52,7 +52,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='kantor_cabang'>
-         <div style='color:red' class='error' id='error-kantor_cabang'></div>
+         <div class='error' id='error-kantor_cabang'></div>
         </div>
        </div>
       </div>

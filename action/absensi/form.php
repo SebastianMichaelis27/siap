@@ -104,7 +104,7 @@
        <option value='Masuk'>Masuk</option>
        <option value='Pulang'>Pulang</option>
       </select>
-      <div style='color:red' class='error' id='error-jenis_absen'></div>
+      <div class='error' id='error-jenis_absen'></div>
      </div>
     </div>
     <div class='row' style='margin-top:5px;'>

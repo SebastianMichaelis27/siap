@@ -35,7 +35,7 @@
         <div>s/d</div>
         <input type='text' class='form-control tanggal' onchange='setTglDari(this); tampilListView();' id='sampai_tanggal' value='<?= date('d-m-Y', strtotime($now)) ?>'>
        </div>
-       <div style='color:red' class='error' id='error-tanggal'></div>
+       <div class='error' id='error-tanggal'></div>
       </div>
      </div>
     </div>
@@ -48,7 +48,7 @@
        <select class='form-control' onchange='tampilListView();' style='width:100%;' id='cabang_id'>
         <?= $list_cabang ?>
        </select>
-       <div style='color:red' class='error' id='error-cabang_id'></div>
+       <div class='error' id='error-cabang_id'></div>
       </div>
      </div>
     </div>

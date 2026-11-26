@@ -31,7 +31,7 @@
          <select class='form-control fieldku' style='width:100%;' onchange='tampilListView();' id='cabang_id'>
           <?= $list_cabang ?>
          </select>
-         <div style='color:red' class='error' id='error-cabang_id'></div>
+         <div class='error' id='error-cabang_id'></div>
         </div>
        </div>
        <div class='row'>
@@ -45,8 +45,8 @@
           <input type='text' class='form-control fieldku tanggal' readonly style='background:white;' onchange='setTglDari(this);' id='sampai_tanggal'>
           <button type='button' class='btn btn-default' style='height:34px;' onclick="clearPeriodeTanggal('tanggal')"><i class='fa fa-close'></i></button>
          </div>
-         <div style='color:red' class='error' id='error-dari_tanggal'></div>
-         <div style='color:red' class='error' id='error-sampai_tanggal'></div>
+         <div class='error' id='error-dari_tanggal'></div>
+         <div class='error' id='error-sampai_tanggal'></div>
         </div>
        </div>
       </div>
@@ -57,7 +57,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='keterangan'>
-         <div style='color:red' class='error' id='error-keterangan'></div>
+         <div class='error' id='error-keterangan'></div>
         </div>
        </div>
       </div>

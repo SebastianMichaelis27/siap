@@ -230,7 +230,7 @@
             <select class='form-control fieldku' style='width:100%;' onchange='changeGudang();' id='cabang_id'>
              <?= $list_cabang ?>
             </select>
-            <div style='color:red' class='error' id='error-cabang_id'></div>
+            <div class='error' id='error-cabang_id'></div>
            </div>
           </div>
           <div id='div-nomor'></div>
@@ -243,7 +243,7 @@
              <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal'>
              <button type='button' class='btn btn-default' style='width:40px;' onclick="document.getElementById('tanggal').value = '';"><i class='fa fa-close'></i></button>
             </div>
-            <div style='color:red' class='error' id='error-tanggal'></div>
+            <div class='error' id='error-tanggal'></div>
            </div>
           </div>
          </div>
@@ -256,7 +256,7 @@
             <select class='form-control fieldku' style='width:100%;' id='karyawan_id'>
              <option></option>
             </select>
-            <div style='color:red' class='error' id='error-karyawan_id'></div>
+            <div class='error' id='error-karyawan_id'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -267,7 +267,7 @@
             <select class='form-control fieldku' style='width:100%;' id='tanda_tangan_id'>
              <?= $list_tanda_tangan ?>
             </select>
-            <div style='color:red' class='error' id='error-tanda_tangan_id'></div>
+            <div class='error' id='error-tanda_tangan_id'></div>
            </div>
           </div>
          </div>
@@ -291,8 +291,8 @@
              <button type='button' class='btn btn-warning' style='width:40px;' onclick='cariCustomer();'><i class='fa fa-search'></i></button>
             </div>
             <input type='hidden' class='fieldku' autocomplete='new-password' id='customer_id'>
-            <div style='color:red' class='error' id='error-customer_id'></div>
-            <div style='color:red' class='error' id='error-nama_customer'></div>
+            <div class='error' id='error-customer_id'></div>
+            <div class='error' id='error-nama_customer'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -301,7 +301,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' class='form-control fieldku fieldku2' autocomplete='new-password' id='alamat_customer'>
-            <div style='color:red' class='error' id='error-alamat_customer'></div>
+            <div class='error' id='error-alamat_customer'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -336,7 +336,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' class='form-control fieldku fieldku2' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='credit_limit_customer'>
-            <div style='color:red' class='error' id='error-credit_limit_customer'></div>
+            <div class='error' id='error-credit_limit_customer'></div>
            </div>
           </div>
          </div>
@@ -379,7 +379,7 @@
              <option value='Lunas'>Lunas</option>
              <option value='Kredit'>Kredit</option>
             </select>
-            <div style='color:red' class='error' id='error-jenis_pembayaran'></div>
+            <div class='error' id='error-jenis_pembayaran'></div>
            </div>
           </div>
           <div class='row' id='row-metode_pembayaran'>
@@ -390,7 +390,7 @@
             <select class='form-control' style='width:100%;' id='metode_pembayaran_id'>
              <?= $list_metode_pembayaran ?>
             </select>
-            <div style='color:red' class='error' id='error-metode_pembayaran_id'></div>
+            <div class='error' id='error-metode_pembayaran_id'></div>
            </div>
           </div>
           <div class='row' id='row-termin_pembayaran'>
@@ -412,7 +412,7 @@
             <select class='form-control fieldku' style='width:100%;' id='bank_id'>
              <?= $list_bank ?>
             </select>
-            <div style='color:red' class='error' id='error-bank_id'></div>
+            <div class='error' id='error-bank_id'></div>
            </div>
           </div>
          </div>
@@ -520,7 +520,7 @@
           <select class='form-control fieldku3' style='width:100%;' id='customer-jenis_customer_id'>
            <?= $list_jenis_customer ?>
           </select>
-          <div style='color:red' class='error' id='error-customer-jenis_customer_id'></div>
+          <div class='error' id='error-customer-jenis_customer_id'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -529,7 +529,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='customer-nama'>
-          <div style='color:red' class='error' id='error-customer-nama'></div>
+          <div class='error' id='error-customer-nama'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -538,7 +538,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='customer-alamat'>
-          <div style='color:red' class='error' id='error-customer-alamat'></div>
+          <div class='error' id='error-customer-alamat'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -571,7 +571,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='customer-credit_limit'>
-          <div style='color:red' class='error' id='error-customer-credit_limit'></div>
+          <div class='error' id='error-customer-credit_limit'></div>
          </div>
         </div>
        </div>
@@ -763,7 +763,7 @@
           <input type='text' class='form-control fieldku4 tanggal' readonly style='background-color:white;' id='pembayaran-tanggal'>
           <button type='button' class='btn btn-default' onclick="document.getElementById('pembayaran-tanggal').value = '';"><i class='fa fa-close'></i></button>
          </div>
-         <div style='color:red' class='error' id='error-pembayaran-tanggal'></div>
+         <div class='error' id='error-pembayaran-tanggal'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -772,7 +772,7 @@
         </div>
         <div class='col-md-4'>
          <input type='text' class='form-control fieldku4' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='pembayaran-nominal'>
-         <div style='color:red' class='error' id='error-pembayaran-nominal'></div>
+         <div class='error' id='error-pembayaran-nominal'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -783,7 +783,7 @@
          <select class='form-control fieldku4' id='pembayaran-metode_pembayaran_id'>
           <?= $list_metode_pembayaran ?>
          </select>
-         <div style='color:red' class='error' id='error-pembayaran-metode_pembayaran_id'></div>
+         <div class='error' id='error-pembayaran-metode_pembayaran_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -792,7 +792,7 @@
         </div>
         <div class='col-md-9'>
          <input type='text' class='form-control fieldku4' id='pembayaran-keterangan'>
-         <div style='color:red' class='error' id='error-pembayaran-keterangan'></div>
+         <div class='error' id='error-pembayaran-keterangan'></div>
         </div>
        </div>
       </div>

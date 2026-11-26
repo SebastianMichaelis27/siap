@@ -194,7 +194,7 @@
             <select class='form-control fieldku select2' style='width:100%;' onchange='tampilListView();' id='gudang_id'>
              <?= $list_gudang ?>
             </select>
-            <div style='color:red' class='error' id='error-gudang_id'></div>
+            <div class='error' id='error-gudang_id'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -206,7 +206,7 @@
              <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal'>
              <button type='button' class='btn btn-default' style='width:40px;' onclick="document.getElementById('tanggal').value = '';"><i class='fa fa-close'></i></button>
             </div>
-            <div style='color:red' class='error' id='error-tanggal'></div>
+            <div class='error' id='error-tanggal'></div>
            </div>
           </div>
          </div>
@@ -222,7 +222,7 @@
              <!--<option value='Retur Penjualan'>Retur Penjualan</option>
              <option value='Mutasi'>Mutasi</option>-->
             </select>
-            <div style='color:red' class='error' id='error-sumber'></div>
+            <div class='error' id='error-sumber'></div>
            </div>
           </div>
          </div>

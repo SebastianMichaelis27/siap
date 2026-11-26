@@ -38,7 +38,7 @@
         <input type='text' class='form-control tanggal' id='sampai_tanggal'>
         <button type='button' class='btn btn-default' onclick="document.getElementById('dari_tanggal').value = ''; document.getElementById('sampai_tanggal').value = '';"><i class='fa fa-close'></i></button>
        </div>
-       <div style='color:red' class='error' id='error-tanggal'></div>
+       <div class='error' id='error-tanggal'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -53,7 +53,7 @@
         <option value='Bulan'>Bulan</option>
         <option value='Tahun'>Tahun</option>
        </select>
-       <div style='color:red' class='error' id='error-periode_grafik'></div>
+       <div class='error' id='error-periode_grafik'></div>
       </div>
      </div>
      <div class='row' id='row-cabang_id' style='margin-top:5px;'>
@@ -64,7 +64,7 @@
        <select class='form-control' style='width:100%;' id='cabang_id'>
         <?= $list_cabang ?>
        </select>
-       <div style='color:red' class='error' id='error-cabang_id'></div>
+       <div class='error' id='error-cabang_id'></div>
       </div>
      </div>
     </div>
@@ -77,7 +77,7 @@
        <select class='form-control' style='width:100%;' autocomplete='new-password' multiple id='karyawan_id'>
         <option></option>
        </select>
-       <div style='color:red' class='error' id='error-karyawan_id'></div>
+       <div class='error' id='error-karyawan_id'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -88,7 +88,7 @@
        <select class='form-control' style='width:100%;' autocomplete='new-password' multiple id='jenis_customer_id'>
         <?= $list_jenis_customer ?>
        </select>
-       <div style='color:red' class='error' id='error-jenis_customer_id'></div>
+       <div class='error' id='error-jenis_customer_id'></div>
       </div>
      </div>
     </div>

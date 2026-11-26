@@ -42,7 +42,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='username'>
-         <div style='color:red' class='error' id='error-username'></div>
+         <div class='error' id='error-username'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -51,7 +51,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='password'>
-         <div style='color:red' class='error' id='error-password'></div>
+         <div class='error' id='error-password'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -62,7 +62,7 @@
          <select class='form-control select2 fieldku' id='users_level_id'>
           <?= $list_users_level_id ?>
          </select>
-         <div style='color:red' class='error' id='error-users_level_id'></div>
+         <div class='error' id='error-users_level_id'></div>
         </div>
        </div>
       </div>
@@ -75,7 +75,7 @@
          <select class='form-control select2 fieldku' id='cabang_id'>
           <?= $list_cabang_id ?>
          </select>
-         <div style='color:red' class='error' id='error-cabang_id'></div>
+         <div class='error' id='error-cabang_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -86,7 +86,7 @@
          <select class='form-control select2 fieldku' id='karyawan_id'>
           <option></option>
          </select>
-         <div style='color:red' class='error' id='error-karyawan_id'></div>
+         <div class='error' id='error-karyawan_id'></div>
         </div>
        </div>
       </div>

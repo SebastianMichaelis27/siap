@@ -94,7 +94,7 @@
          <select class='form-control fieldku select2' style='width:100%;' onchange='tampilListView();' id='cabang_id'>
           <?= $list_cabang ?>
          </select>
-         <div style='color:red' class='error' id='error-cabang_id'></div>
+         <div class='error' id='error-cabang_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -103,7 +103,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='nik'>
-         <div style='color:red' class='error' id='error-nik'></div>
+         <div class='error' id='error-nik'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -112,7 +112,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='nama'>
-         <div style='color:red' class='error' id='error-nama'></div>
+         <div class='error' id='error-nama'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -123,7 +123,7 @@
          <select class='form-control fieldku select2' style='width:100%;' id='jabatan_id'>
           <?= $list_jabatan ?>
          </select>
-         <div style='color:red' class='error' id='error-jabatan_id'></div>
+         <div class='error' id='error-jabatan_id'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -132,7 +132,7 @@
         </div>
         <div class='col-md-7'>
          <select class='form-control fieldku' style='width:100%;' multiple id='no_hp'></select>
-         <div style='color:red' class='error' id='error-no_hp'></div>
+         <div class='error' id='error-no_hp'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -141,7 +141,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='alamat'>
-         <div style='color:red' class='error' id='error-alamat'></div>
+         <div class='error' id='error-alamat'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -150,7 +150,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='gaji_per_bulan'>
-         <div style='color:red' class='error' id='error-gaji_per_bulan'></div>
+         <div class='error' id='error-gaji_per_bulan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -159,7 +159,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='gaji_per_hari'>
-         <div style='color:red' class='error' id='error-gaji_per_hari'></div>
+         <div class='error' id='error-gaji_per_hari'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -168,7 +168,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='uang_makan_per_hari'>
-         <div style='color:red' class='error' id='error-uang_makan_per_hari'></div>
+         <div class='error' id='error-uang_makan_per_hari'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -177,7 +177,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='uang_makan_lembur_per_hari'>
-         <div style='color:red' class='error' id='error-uang_makan_lembur_per_hari'></div>
+         <div class='error' id='error-uang_makan_lembur_per_hari'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -186,7 +186,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='uang_pulsa_per_bulan'>
-         <div style='color:red' class='error' id='error-uang_pulsa_per_bulan'></div>
+         <div class='error' id='error-uang_pulsa_per_bulan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -195,7 +195,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='uang_lembur_per_jam'>
-         <div style='color:red' class='error' id='error-uang_lembur_per_jam'></div>
+         <div class='error' id='error-uang_lembur_per_jam'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -204,7 +204,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='uang_servis_kendaraan_per_bulan'>
-         <div style='color:red' class='error' id='error-uang_servis_kendaraan_per_bulan'></div>
+         <div class='error' id='error-uang_servis_kendaraan_per_bulan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -213,7 +213,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='tunjangan_harian'>
-         <div style='color:red' class='error' id='error-tunjangan_harian'></div>
+         <div class='error' id='error-tunjangan_harian'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -222,7 +222,7 @@
         </div>
         <div class='col-md-7'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='tunjangan_jabatan_per_bulan'>
-         <div style='color:red' class='error' id='error-tunjangan_jabatan_per_bulan'></div>
+         <div class='error' id='error-tunjangan_jabatan_per_bulan'></div>
         </div>
        </div>
       </div>
@@ -233,7 +233,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='tunjangan_kesehatan_per_bulan'>
-         <div style='color:red' class='error' id='error-tunjangan_kesehatan_per_bulan'></div>
+         <div class='error' id='error-tunjangan_kesehatan_per_bulan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -242,7 +242,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='tunjangan_transportasi_per_bulan'>
-         <div style='color:red' class='error' id='error-tunjangan_transportasi_per_bulan'></div>
+         <div class='error' id='error-tunjangan_transportasi_per_bulan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -251,7 +251,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='potongan_per_tidak_masuk'>
-         <div style='color:red' class='error' id='error-potongan_per_tidak_masuk'></div>
+         <div class='error' id='error-potongan_per_tidak_masuk'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -260,7 +260,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='potongan_per_izin_cuti'>
-         <div style='color:red' class='error' id='error-potongan_per_izin_cuti'></div>
+         <div class='error' id='error-potongan_per_izin_cuti'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -269,7 +269,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='potongan_per_terlambat_masuk'>
-         <div style='color:red' class='error' id='error-potongan_per_terlambat_masuk'></div>
+         <div class='error' id='error-potongan_per_terlambat_masuk'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -278,7 +278,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='potongan_per_pulang_sebelum_waktunya'>
-         <div style='color:red' class='error' id='error-potongan_per_pulang_sebelum_waktunya'></div>
+         <div class='error' id='error-potongan_per_pulang_sebelum_waktunya'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -287,7 +287,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='potongan_per_tidak_absen_masuk'>
-         <div style='color:red' class='error' id='error-potongan_per_tidak_absen_masuk'></div>
+         <div class='error' id='error-potongan_per_tidak_absen_masuk'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -296,7 +296,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this);' onchange='fnomor(this);' onfocus='this.select();' onfocusout='fnomor2(this);' style='text-align:right;' id='potongan_per_tidak_absen_pulang'>
-         <div style='color:red' class='error' id='error-potongan_per_tidak_absen_pulang'></div>
+         <div class='error' id='error-potongan_per_tidak_absen_pulang'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -308,7 +308,7 @@
           <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal_masuk'>
           <button type='button' class='btn btn-default' onclick="document.getElementById('tanggal_masuk').value = '';"><i class='fa fa-close'></i></button>
          </div>
-         <div style='color:red' class='error' id='error-tanggal_masuk'></div>
+         <div class='error' id='error-tanggal_masuk'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -317,7 +317,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='tanggal_gajian_tiap_bulan'>
-         <div style='color:red' class='error' id='error-tanggal_gajian_tiap_bulan'></div>
+         <div class='error' id='error-tanggal_gajian_tiap_bulan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -330,7 +330,7 @@
           <option value='1'>Aktif</option>
           <option value='2'>Tidak Aktif</option>
          </select>
-         <div style='color:red' class='error' id='error-status_aktif'></div>
+         <div class='error' id='error-status_aktif'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -339,7 +339,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='utang'>
-         <div style='color:red' class='error' id='error-utang'></div>
+         <div class='error' id='error-utang'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -348,7 +348,7 @@
         </div>
         <div class='col-md-6'>
          <input type='text' class='form-control fieldku' autocomplete='new-password' id='password'>
-         <div style='color:red' class='error' id='error-password'></div>
+         <div class='error' id='error-password'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -359,7 +359,7 @@
          <select class='form-control fieldku select2' style='width:100%;' id='jam_kerja_id'>
           <?= $list_jam_kerja ?>
          </select>
-         <div style='color:red' class='error' id='error-jam_kerja_id'></div>
+         <div class='error' id='error-jam_kerja_id'></div>
         </div>
        </div>
 

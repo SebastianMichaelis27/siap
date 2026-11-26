@@ -202,7 +202,7 @@
             <select class='form-control fieldku' style='width:100%;' onchange='tampilListView();' id='cabang_id'>
              <?= $list_cabang ?>
             </select>
-            <div style='color:red' class='error' id='error-cabang_id'></div>
+            <div class='error' id='error-cabang_id'></div>
            </div>
           </div>
           <div id='div-nomor'></div>
@@ -215,7 +215,7 @@
              <input type='text' class='form-control fieldku tanggal' autocomplete='new-password' style='background-color:white;' readonly id='tanggal'>
              <button type='button' class='btn btn-default' style='width:40px;' onclick="document.getElementById('tanggal').value = '';"><i class='fa fa-close'></i></button>
             </div>
-            <div style='color:red' class='error' id='error-tanggal'></div>
+            <div class='error' id='error-tanggal'></div>
            </div>
           </div>
          </div>
@@ -228,7 +228,7 @@
             <select class='form-control fieldku' style='width:100%;' id='tanda_tangan_id'>
              <?= $list_tanda_tangan ?>
             </select>
-            <div style='color:red' class='error' id='error-tanda_tangan_id'></div>
+            <div class='error' id='error-tanda_tangan_id'></div>
            </div>
           </div>
          </div>
@@ -252,8 +252,8 @@
              <button type='button' class='btn btn-warning' style='width:40px;' onclick='cariSupplier();'><i class='fa fa-search'></i></button>
             </div>
             <input type='hidden' class='fieldku' autocomplete='new-password' id='supplier_id'>
-            <div style='color:red' class='error' id='error-supplier_id'></div>
-            <div style='color:red' class='error' id='error-nama_supplier'></div>
+            <div class='error' id='error-supplier_id'></div>
+            <div class='error' id='error-nama_supplier'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -262,7 +262,7 @@
            </div>
            <div class='col-md-8'>
             <input type='text' class='form-control fieldku fieldku2' autocomplete='new-password' id='alamat_supplier'>
-            <div style='color:red' class='error' id='error-alamat_supplier'></div>
+            <div class='error' id='error-alamat_supplier'></div>
            </div>
           </div>
           <div class='row' style='margin-top:5px;'>
@@ -411,7 +411,7 @@
           <select class='form-control fieldku3' style='width:100%;' id='supplier-jenis_supplier_id'>
            <?= $list_jenis_supplier ?>
           </select>
-          <div style='color:red' class='error' id='error-supplier-jenis_supplier_id'></div>
+          <div class='error' id='error-supplier-jenis_supplier_id'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -420,7 +420,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='supplier-nama'>
-          <div style='color:red' class='error' id='error-supplier-nama'></div>
+          <div class='error' id='error-supplier-nama'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>
@@ -429,7 +429,7 @@
          </div>
          <div class='col-md-8'>
           <input type='text' class='form-control fieldku3' autocomplete='new-password' id='supplier-alamat'>
-          <div style='color:red' class='error' id='error-supplier-alamat'></div>
+          <div class='error' id='error-supplier-alamat'></div>
          </div>
         </div>
         <div class='row' style='margin-top:5px;'>

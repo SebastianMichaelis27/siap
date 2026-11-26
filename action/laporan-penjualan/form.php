@@ -47,7 +47,7 @@
        <select class='form-control' style='width:100%;' id='cabang_id' onchange='tampilListView();'>
         <?= $list_cabang ?>
        </select>
-       <div style='color:red' class='error' id='error-cabang_id'></div>
+       <div class='error' id='error-cabang_id'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -60,7 +60,7 @@
         <div>s/d</div>
         <input type='text' autocomplete='new-password' class='form-control tanggal' onchange='setTglSampai(this); tampilListView();' id='sampai_tanggal' value='<?= date('d-m-Y', strtotime($now)) ?>'>
        </div>
-       <div style='color:red' class='error' id='error-tanggal'></div>
+       <div class='error' id='error-tanggal'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -71,7 +71,7 @@
        <select class='form-control' style='width:100%;' id='customer_id' onchange='tampilListView();'>
         <option></option>
        </select>
-       <div style='color:red' class='error' id='error-customer_id'></div>
+       <div class='error' id='error-customer_id'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -82,7 +82,7 @@
        <select class='form-control' style='width:100%;' id='jenis_customer_id' onchange='tampilListView();'>
         <?= $list_jenis_customer ?>
        </select>
-       <div style='color:red' class='error' id='error-jenis_customer_id'></div>
+       <div class='error' id='error-jenis_customer_id'></div>
       </div>
      </div>
     </div>
@@ -95,7 +95,7 @@
        <select class='form-control' style='width:100%;' id='karyawan_id' onchange='tampilListView();'>
         <?= $list_karyawan ?>
        </select>
-       <div style='color:red' class='error' id='error-karyawan_id'></div>
+       <div class='error' id='error-karyawan_id'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -104,7 +104,7 @@
       </div>
       <div class='col-md-9'>
        <input type='text' autocomplete='new-password' class='form-control fieldku' onkeyup='timeSearch();' onchange='timeSearch();' id='merek'>
-       <div style='color:red' class='error' id='error-merek'></div>
+       <div class='error' id='error-merek'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -113,7 +113,7 @@
       </div>
       <div class='col-md-9'>
        <input type='text' autocomplete='new-password' class='form-control fieldku' onkeyup='timeSearch();' onchange='timeSearch();' id='tipe'>
-       <div style='color:red' class='error' id='error-tipe'></div>
+       <div class='error' id='error-tipe'></div>
       </div>
      </div>
      <div class='row' style='margin-top:5px;'>
@@ -125,7 +125,7 @@
         <input type='text' autocomplete='new-password' class='form-control fieldku' onkeypress='return hanyaAngka(this);' onkeyup='fnomor(this); timeSearch();' onchange='fnomor(this);' onfocus='this.select();' style='text-align:right;' id='kapasitas_pk'>
         <div>PK</div>
        </div>
-       <div style='color:red' class='error' id='error-kapasitas_pk'></div>
+       <div class='error' id='error-kapasitas_pk'></div>
       </div>
      </div>
     </div>

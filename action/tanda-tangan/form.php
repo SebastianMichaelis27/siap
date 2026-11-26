@@ -27,7 +27,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='tanda_tangan'>
-         <div style='color:red' class='error' id='error-tanda_tangan'></div>
+         <div class='error' id='error-tanda_tangan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -36,7 +36,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='nama'>
-         <div style='color:red' class='error' id='error-nama'></div>
+         <div class='error' id='error-nama'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -45,7 +45,7 @@
         </div>
         <div class='col-md-8'>
          <input type='text' autocomplete='new-password' class='form-control fieldku' id='jabatan'>
-         <div style='color:red' class='error' id='error-jabatan'></div>
+         <div class='error' id='error-jabatan'></div>
         </div>
        </div>
        <div class='row' style='margin-top:5px;'>
@@ -58,7 +58,7 @@
           <button type='button' class='btn btn-danger' style='display:none;' onclick='hapusFile();' id='btn-hapus-file'><i class='fa fa-close'></i> Hapus File</button>
          </div>
          <img src='dist/img/no_image.jpg' style='width:100%; border:1px solid silver;' id='file_ttd'>
-         <div style='color:red' class='error' id='error-file_ttd'></div>
+         <div class='error' id='error-file_ttd'></div>
         </div>
        </div>
       </div>
