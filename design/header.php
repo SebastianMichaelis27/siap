@@ -56,7 +56,7 @@
    }
   .skin-blue .main-header .navbar
    { text-align : center;
-     border-bottom : 5px #ad8020 solid;
+     border-bottom : 5px #ecb43c solid;
      background-color : #112b46;
    }
   .skin-blue .main-header .navbar .sidebar-toggle:hover

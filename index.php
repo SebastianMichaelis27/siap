@@ -1,7 +1,7 @@
 <?php
  include("design/url.php");
 
- $versi = 0;
+ $versi = 1;
  $actual_link = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
  $last_actual_link = substr($actual_link, strrpos($actual_link, '/') + 1);
 

@@ -80,7 +80,6 @@
          <th style='padding:2px 4px 2px 4px; min-width:100px;'>No. Penawaran</th>
          <th style='padding:2px 4px 2px 4px; min-width:200px;'>Customer</th>
          <th style='padding:2px 4px 2px 4px; min-width:200px;'>Alamat Customer</th>
-         <th style='padding:2px 4px 2px 4px; min-width:200px;'>Sales</th>
          <th style='padding:2px 4px 2px 4px; text-align:center; width:150px; max-width:150px; min-width:150px;'>Total</th>
          <th style='padding:2px 4px 2px 4px; text-align:center; width:150px; max-width:150px; min-width:150px;'>Act</th>
          <th style='padding:2px 4px 2px 4px; text-align:center; width:50px; max-width:50px; min-width:50px;'>Print</th>
@@ -95,9 +94,6 @@
      "Type" => $row['Type'],
     ));
   }
-
- $filter_barang = "";
- $filter_karyawan = "";
 
  $dataRows = array();
  $DataEdit = "";
@@ -130,22 +126,29 @@
     if(isset($row['detail']) && $row['detail'] !== "")
      { $detail = json_decode($row['detail'], true);
      }
-    $array_push['detail'] = $detail;
+    $kelompok = array();
+    for($i=0; $i<count($detail); $i++)
+     { $index = array_search($detail[$i]['no_kelompok'], array_column($kelompok, 'no_kelompok'));
+       if(strval($index) == "")
+        { array_push($kelompok, array(
+           "no_kelompok" => $detail[$i]['no_kelompok'],
+           "nama_kelompok" => $detail[$i]['nama_kelompok'],
+           "detail" => array(),
+          ));
+          $index = count($kelompok) - 1;
+        }
+       array_push($kelompok[$index]['detail'], array(
+        "id" => $detail[$i]['id'],
+        "penawaran_proyek_id" => $detail[$i]['penawaran_proyek_id'],
+        "uraian" => $detail[$i]['uraian'],
+        "jumlah" => $detail[$i]['jumlah'],
+        "satuan" => $detail[$i]['satuan'],
+        "harga" => $detail[$i]['harga'],
+        "total" => $detail[$i]['total'],
+       ));
+     }
+    $array_push['detail'] = $kelompok;
     array_push($dataRows, $array_push);
-    foreach($detail as $key => $value)
-     { if(strval(strpos($filter_barang, "id = '".$value['barang_id']."'")) == "")
-        { if($filter_barang !== "")
-           { $filter_barang .= " or";
-           }
-          $filter_barang .= " id = '".$value['barang_id']."'";
-        }
-     }
-    if(strval(strpos($filter_karyawan, "id = '".$row['karyawan_id']."'")) == "")
-     { if($filter_karyawan !== "")
-        { $filter_karyawan .= " or";
-        }
-       $filter_karyawan .= " id = '".$row['karyawan_id']."'";
-     }
 
     $no_telp_customer = array();
     if(isset($row['no_telp_customer']) && $row['no_telp_customer'] !== "")
@@ -184,105 +187,35 @@
     $DataEdit .= "</div>";
   }
 
- $arrayBarang = array();
- if($filter_barang !== "")
-  { $query = "select * from barang where".$filter_barang;
-    $execute = mysqli_query($koneksi, $query);
-    while($row = mysqli_fetch_array($execute))
-     { $data_push = array();
-       foreach($row as $key => $value)
-        { if($key !== 0 && intval($key) == 0)
-           { $data_push[$key] = $value;
-           }
-        }
-       array_push($arrayBarang, $data_push);
-     }
-  }
-
- $arrayKaryawan = array();
- if($filter_karyawan !== "")
-  { $query = "select * from karyawan where".$filter_karyawan;
-    $execute = mysqli_query($koneksi, $query);
-    while($row = mysqli_fetch_array($execute))
-     { array_push($arrayKaryawan, array(
-        "id" => $row['id'],
-        "nik" => $row['nik'],
-        "nama" => $row['nama'],
-       ));
-     }
-  }
-
  for($i=0; $i<count($dataRows); $i++)
-  { $karyawan = "";
-    $index = array_search($dataRows[$i]['karyawan_id'], array_column($arrayKaryawan, 'id'));
-    if(strval($index) !== "")
-     { $karyawan = $arrayKaryawan[$index]['nik']." - ".$arrayKaryawan[$index]['nama'];
-     }
-    $btn_print = "";
-    if(strval($dataRows[$i]['approved_at']) == "" && strval($dataRows[$i]['rejected_at']) == "")
-     { $btn_print = "<button type='button' class='btn btn-warning cetak' title='Menunggu Konfirmasi'><i class='fa fa-clock-o'></i></button>";
-     }
-    else if(strval($dataRows[$i]['rejected_at']) !== "")
-     { $btn_print = "<button type='button' class='btn btn-default cetak' title='Ditolak'><i class='fa fa-close'></i></button>";
-     }
-    else
-     { $btn_print = "<button type='button' class='btn btn-danger cetak' title='Cetak' onclick='cetak(this);'><i class='fa fa-file-pdf-o'></i></button>";
-     }
-    echo "<tr>
+  { echo "<tr>
            <td style='padding:2px 4px 2px 4px;'>".$dataRows[$i]['tanggal']."</td>
            <td style='padding:2px 4px 2px 4px;'>".$dataRows[$i]['nomor_penawaran']."</td>
            <td style='padding:2px 4px 2px 4px;'>".$dataRows[$i]['nama_customer']."</td>
            <td style='padding:2px 4px 2px 4px;'>".$dataRows[$i]['alamat_customer']."</td>
-           <td style='padding:2px 4px 2px 4px;'>".$karyawan."</td>
            <td style='padding:2px 4px 2px 4px; text-align:right;'>".$dataRows[$i]['total']."</td>
            <td style='padding:2px 4px 2px 4px; text-align:center;'>
             <button type='button' class='btn btn-default view' title='View' onclick='view(this);'><i class='fa fa-search'></i></button>
             <button type='button' class='btn btn-default edit' title='Edit' onclick='edit(this);'><i class='fa fa-edit'></i></button>
             <button type='button' class='btn btn-default hapus' title='Hapus' onclick='konfirmasiHapus(this);'><i class='fa fa-trash'></i></button>
            </td>
-           <td style='padding:2px 4px 2px 4px; text-align:center;'>".$btn_print."</td>
+           <td style='padding:2px 4px 2px 4px; text-align:center;'>
+            <button type='button' class='btn btn-danger cetak' title='Cetak' onclick='cetak(this);'><i class='fa fa-file-pdf-o'></i></button>
+           </td>
           </tr>";
-    $DataEdit .= "<select class='select_edit-karyawan_id'><option value='".$dataRows[$i]['karyawan_id']."' selected>".$karyawan."</option></select>";
-    $DataEdit .= "<div class='div-detail_barang'>";
-    foreach($dataRows[$i]['detail'] as $key => $data)
-     { $kode = "";
-       $nama = "";
-       $merek = "";
-       $model = "";
-       $tipe = "";
-       $jenis = "";
-       $kapasitas_pk = "";
-       $btuh = "";
-       $index = array_search($data['barang_id'], array_column($arrayBarang, 'id'));
-       if(strval($index) !== "")
-        { $kode = $arrayBarang[$index]['kode'];
-          $nama = $arrayBarang[$index]['nama'];
-          $merek = $arrayBarang[$index]['merek'];
-          $model = $arrayBarang[$index]['model'];
-          $tipe = $arrayBarang[$index]['tipe'];
-          $jenis = $arrayBarang[$index]['jenis'];
-          $kapasitas_pk = $arrayBarang[$index]['kapasitas_pk'];
-          $btuh = $arrayBarang[$index]['btuh'];
+    $DataEdit .= "<div class='div-detail_kelompok'>";
+    for($j=0; $j<count($dataRows[$i]['detail']); $j++)
+     { $DataEdit .= "<textarea class='detail_kelompok-nama_kelompok'>".$dataRows[$i]['detail'][$j]['nama_kelompok']."</textarea>
+                     <div class='detail_kelompok-detail_barang'>";
+       for($k=0; $k<count($dataRows[$i]['detail'][$j]['detail']); $k++)
+        { $DataEdit .= "<textarea class='detail_barang-id'>".$dataRows[$i]['detail'][$j]['detail'][$k]['id']."</textarea>
+                        <textarea class='detail_barang-uraian'>".$dataRows[$i]['detail'][$j]['detail'][$k]['uraian']."</textarea>
+                        <textarea class='detail_barang-jumlah'>".formatAngka($dataRows[$i]['detail'][$j]['detail'][$k]['jumlah'])."</textarea>
+                        <textarea class='detail_barang-satuan'>".$dataRows[$i]['detail'][$j]['detail'][$k]['satuan']."</textarea>
+                        <textarea class='detail_barang-harga'>".formatAngka($dataRows[$i]['detail'][$j]['detail'][$k]['harga'])."</textarea>
+                        <textarea class='detail_barang-total'>".formatAngka($dataRows[$i]['detail'][$j]['detail'][$k]['total'])."</textarea>";
         }
-       $DataEdit .= "<textarea class='detail_barang-kode'>".$kode."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-nama'>".$nama."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-merek'>".$merek."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-model'>".$model."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-tipe'>".$tipe."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-jenis'>".$jenis."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-kapasitas_pk'>".$kapasitas_pk."</textarea>";
-       $DataEdit .= "<textarea class='detail_barang-btuh'>".$btuh."</textarea>";
-       foreach($data as $key => $value)
-        { if(is_array($value))
-           { $value = json_encode($value);
-           }
-          if(intval($key) == 0 && strval($key) !== "0")
-           { if(is_numeric($value) && $key !== "id" && strval(strpos($key, "id_")) == "" && strval(strpos($key, "_id")) == "")
-              { $value = number_format($value, 2, ",", ".");
-              }
-             $DataEdit .= "<textarea class='detail_barang-".$key."'>".$value."</textarea>";
-           }
-        }
+       $DataEdit .= "</div>";
      }
     $DataEdit .= "</div>";
   }

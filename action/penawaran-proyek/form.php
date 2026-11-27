@@ -383,7 +383,7 @@
        <div class='col-md-12'>
         <div class='group-border'>
          <div class='group-title'>
-          <div class='group-number'>I.</div>
+          <div><span class='group-number'>I</span>.<input type='hidden' class='nomor_kelompok'></div>
           <div>
            <input type='text' class='form-control nama_kelompok' style='width:100%;' placeholder='Kelompok Item Pekerjaan'>
            <div class='error'></div>
@@ -394,7 +394,7 @@
           </div>
          </div>
          <div class='group-body'>
-          <button type='button' class='btn btn-success' onclick='addItem(this);'><i class='fa fa-plus'></i> Item</button>
+          <button type='button' class='btn btn-success btn-add-item' onclick='addItem(this);'><i class='fa fa-plus'></i> Item</button>
           <div class='responsiveku'>
            <table class='table table-bordered'>
             <thead>
@@ -768,14 +768,15 @@
      { data['email_customer'] = null;
      }
 
+    var detail = [];
     var a = document.querySelectorAll('.uraian');
     for(var i=0; i<a.length; i++)
      { if(a[i].value == '')
         { error++;
-          a[i].parentNode.querySelector('.error').innerHTML = 'Wajib diisi!';
+          document.querySelectorAll('.uraian')[i].parentNode.querySelector('.error').innerHTML = 'Wajib diisi!';
         }
        else
-        { a[i].parentNode.querySelector('.error').innerHTML = '';
+        { document.querySelectorAll('.uraian')[i].parentNode.querySelector('.error').innerHTML = '';
         }
        if(document.querySelectorAll('.qty')[i].value == '')
         { error++;
@@ -798,7 +799,18 @@
        else
         { document.querySelectorAll('.harga')[i].parentNode.querySelector('.error').innerHTML = '';
         }
+       var valueToPush = {};
+       valueToPush.id = document.querySelectorAll('.id')[i].value;
+       valueToPush.nomor_kelompok = a[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.nomor_kelompok').value;
+       valueToPush.nama_kelompok = a[i].parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.nama_kelompok').value;
+       valueToPush.uraian = document.querySelectorAll('.uraian')[i].value;
+       valueToPush.jumlah = normal(document.querySelectorAll('.qty')[i].value) * 1;
+       valueToPush.satuan = document.querySelectorAll('.satuan')[i].value;
+       valueToPush.harga = normal(document.querySelectorAll('.harga')[i].value) * 1;
+       valueToPush.total = normal(document.querySelectorAll('.total')[i].value) * 1;
+       detail.push(valueToPush);
      }
+    data['detail'] = detail;
 
     var a = document.getElementsByClassName('fieldku');
     for(var loop=0; loop<a.length; loop++)
@@ -958,6 +970,7 @@
     clearNoTelpCustomer();
     clearNoWaCustomer();
     clearEmailCustomer();
+    clearKelompokItem();
     document.getElementById('nomor_penawaran').innerHTML = '';
     document.getElementById('div-nomor').innerHTML = '';
     document.getElementById('btnsimpan').style['display'] = 'block';
@@ -1033,6 +1046,24 @@
         { tambahEmailCustomer();
         }
        document.querySelectorAll('#list-email_customer input')[i].value = a[i].value;
+     }
+
+    clearKelompokItem();
+    var a = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-nama_kelompok');
+    for(var i=0; i<a.length; i++)
+     { if(i > 0)
+        { addKelompokItem();
+        }
+       document.querySelectorAll('.nama_kelompok')[i].value = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-nama_kelompok')[i].value;
+       var b = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-detail_barang')[i].querySelectorAll('.detail_barang-id');
+       for(var j=0; j<b.length; j++)
+        { addItem(document.querySelectorAll('.kelompok-item')[i].querySelector('.btn-add-item'));
+          document.querySelectorAll('.kelompok-item')[i].querySelectorAll('.uraian')[j].value = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-detail_barang')[i].querySelectorAll('.detail_barang-uraian')[j].value;
+          document.querySelectorAll('.kelompok-item')[i].querySelectorAll('.qty')[j].value = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-detail_barang')[i].querySelectorAll('.detail_barang-jumlah')[j].value;
+          document.querySelectorAll('.kelompok-item')[i].querySelectorAll('.satuan')[j].value = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-detail_barang')[i].querySelectorAll('.detail_barang-satuan')[j].value;
+          document.querySelectorAll('.kelompok-item')[i].querySelectorAll('.harga')[j].value = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-detail_barang')[i].querySelectorAll('.detail_barang-harga')[j].value;
+          document.querySelectorAll('.kelompok-item')[i].querySelectorAll('.total')[j].value = document.querySelectorAll('.div-detail_kelompok')[position].querySelectorAll('.detail_kelompok-detail_barang')[i].querySelectorAll('.detail_barang-total')[j].value;
+        }
      }
 
     document.getElementById('div-nomor').innerHTML = `
@@ -1801,6 +1832,7 @@
     tr.innerHTML = `
      <td style='text-align:right;'></td>
      <td>
+      <input type='hidden' class='id'>
       <input type='text' class='form-control uraian'>
       <div class='error'></div>
      </td>
@@ -1861,6 +1893,11 @@
 
  var kelompok_item = document.querySelector('.kelompok-item').innerHTML;
 
+ function clearKelompokItem()
+  { document.getElementById('list-kelompok').innerHTML = '';
+    addKelompokItem();
+  }
+
  function addKelompokItem()
   { var new_element = document.createElement('div');
     new_element.className = 'row kelompok-item';
@@ -1879,7 +1916,8 @@
  function setNoKelompok()
   { var a = document.querySelectorAll('.group-number');
     for(var i=0; i<a.length; i++)
-     { a[i].innerHTML = angkaKeRomawi(i + 1) + '.';
+     { a[i].innerHTML = angkaKeRomawi(i + 1);
+       a[i].parentNode.querySelector('.nomor_kelompok').value = i + 1;
        if(i < a.length - 1)
         { a[i].parentNode.parentNode.querySelector('.btn-add-kelompok').style['display'] = 'none';
           a[i].parentNode.parentNode.querySelector('.btn-hapus-kelompok').style['display'] = 'block';

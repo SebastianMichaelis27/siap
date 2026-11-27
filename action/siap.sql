@@ -11,7 +11,7 @@
  Target Server Version : 100428 (10.4.28-MariaDB)
  File Encoding         : 65001
 
- Date: 26/11/2026 19:26:04
+ Date: 28/11/2026 00:08:49
 */
 
 SET NAMES utf8mb4;
@@ -743,20 +743,7 @@ CREATE TABLE `log_penawaran_proyek` (
   `no_wa_customer` varchar(255) DEFAULT NULL,
   `email_customer` varchar(255) DEFAULT NULL,
   `detail` text DEFAULT NULL,
-  `jumlah` decimal(20,2) DEFAULT NULL,
-  `jumlah_pesanan` decimal(20,2) DEFAULT NULL,
-  `sub_total` decimal(20,2) DEFAULT NULL,
-  `persen_diskon` decimal(20,2) DEFAULT NULL,
-  `diskon` decimal(20,2) DEFAULT NULL,
-  `dpp` decimal(20,2) DEFAULT NULL,
-  `persen_ppn` decimal(20,2) DEFAULT NULL,
-  `ppn` decimal(20,2) DEFAULT NULL,
   `total` decimal(20,2) DEFAULT NULL,
-  `approved_at` datetime DEFAULT NULL,
-  `approved_by` varchar(255) DEFAULT NULL,
-  `approved_type` varchar(255) DEFAULT NULL,
-  `rejected_at` datetime DEFAULT NULL,
-  `rejected_by` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `created_by` varchar(255) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -770,8 +757,20 @@ CREATE TABLE `log_penawaran_proyek` (
 -- Records of log_penawaran_proyek
 -- ----------------------------
 BEGIN;
-INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `jumlah`, `jumlah_pesanan`, `sub_total`, `persen_diskon`, `diskon`, `dpp`, `persen_ppn`, `ppn`, `total`, `approved_at`, `approved_by`, `approved_type`, `rejected_at`, `rejected_by`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-26', 2, 1, 1, 7, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2026-11-26 16:05:26', 'sebastian', NULL, NULL, NULL, NULL, 1);
-INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `jumlah`, `jumlah_pesanan`, `sub_total`, `persen_diskon`, `diskon`, `dpp`, `persen_ppn`, `ppn`, `total`, `approved_at`, `approved_by`, `approved_type`, `rejected_at`, `rejected_by`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-26', 2, 1, 1, 7, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2026-11-26 16:05:26', 'sebastian', NULL, NULL, '2026-11-26 16:06:35', 'sebastian', 2);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-26', 2, 1, 1, 7, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, NULL, NULL, '2026-11-26 16:05:26', 'sebastian', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-26', 2, 1, 1, 7, 1, 'Bapak Sumanto', 'Jl. Sidodadi No. 17', '[{\"no_telp_customer\":\"08127127123\"}]', '[{\"no_wa_customer\":\"08127127123\"}]', NULL, NULL, NULL, '2026-11-26 16:05:26', 'sebastian', NULL, NULL, '2026-11-26 16:06:35', 'sebastian', 2);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (2, 1, '02', 1, 2026, '2026-11-27', 2, NULL, 1, 1, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', NULL, NULL, '2026-11-27 01:42:55', 'sebastian', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (2, 1, '02', 122, 2026, '2026-11-27', 2, NULL, 1, 1, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[]', NULL, '2026-11-27 01:42:55', 'sebastian', '2026-11-27 01:44:36', 'sebastian', NULL, NULL, 2);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (2, 1, '02', 122, 2026, '2026-11-27', 2, NULL, 1, 1, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[]', NULL, '2026-11-27 01:42:55', 'sebastian', '2026-11-27 01:44:36', 'sebastian', '2026-11-27 01:44:41', 'sebastian', 3);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (3, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 9, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":1,\"penawaran_proyek_id\":3,\"no_kelompok\":1,\"nama_kelompok\":\"adads\",\"uraian\":\"adsads\",\"jumlah\":1,\"satuan\":\"Pcs\",\"harga\":100000,\"total\":100000}]', 100000.00, '2026-11-27 22:10:44', 'sebastian', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 2, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":1,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"Chiller\",\"uraian\":\"AC Chiller\",\"jumlah\":10,\"satuan\":\"Pcs\",\"harga\":15000000,\"total\":150000000}]', 158500000.00, '2026-11-27 22:39:25', 'sebastian', NULL, NULL, NULL, NULL, 3);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (7, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":7,\"penawaran_proyek_id\":7,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"DSD\",\"harga\":10000,\"total\":10000}]', 82200.00, '2026-11-27 22:45:09', 'sebastian', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":1,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"DSD\",\"harga\":10000,\"total\":10000}]', 82200.00, '2026-11-27 22:45:45', 'sebastian', NULL, NULL, NULL, NULL, 4);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":1,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"DSD\",\"harga\":10000,\"total\":10000},{\"id\":2,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"SSS\",\"jumlah\":2,\"satuan\":\"DFDF\",\"harga\":5000,\"total\":10000},{\"id\":3,\"penawaran_proyek_id\":1,\"no_kelompok\":2,\"nama_kelompok\":\"ASDASD\",\"uraian\":\"SSSS\",\"jumlah\":1,\"satuan\":\"SDSD\",\"harga\":62200,\"total\":62200}]', 82200.00, '2026-11-27 22:50:33', 'sebastian', NULL, NULL, NULL, NULL, 5);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":4,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"DSD\",\"harga\":10000,\"total\":10000},{\"id\":5,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"SSS\",\"jumlah\":2,\"satuan\":\"DFDF\",\"harga\":5000,\"total\":10000},{\"id\":6,\"penawaran_proyek_id\":1,\"no_kelompok\":2,\"nama_kelompok\":\"ASDASD\",\"uraian\":\"SSSS\",\"jumlah\":3,\"satuan\":\"SDSD\",\"harga\":62200,\"total\":186600}]', 206600.00, '2026-11-27 22:50:33', 'sebastian', '2026-11-28 00:07:01', 'sebastian', NULL, NULL, 6);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":7,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"DSD\",\"harga\":10000,\"total\":10000},{\"id\":8,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"DAD\",\"uraian\":\"SSS\",\"jumlah\":2,\"satuan\":\"DFDF\",\"harga\":5000,\"total\":10000}]', 20000.00, '2026-11-27 22:50:33', 'sebastian', '2026-11-28 00:07:07', 'sebastian', NULL, NULL, 7);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":9,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"Sebastian\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"Unit\",\"harga\":10000,\"total\":10000},{\"id\":10,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"Sebastian\",\"uraian\":\"SSS\",\"jumlah\":2,\"satuan\":\"Unit\",\"harga\":5000,\"total\":10000},{\"id\":11,\"penawaran_proyek_id\":1,\"no_kelompok\":2,\"nama_kelompok\":\"Michaelis\",\"uraian\":\"Arga\",\"jumlah\":3,\"satuan\":\"Pcs\",\"harga\":4000,\"total\":12000}]', 32000.00, '2026-11-27 22:50:33', 'sebastian', '2026-11-28 00:07:43', 'sebastian', NULL, NULL, 8);
+INSERT INTO `log_penawaran_proyek` (`id`, `cabang_id`, `kode`, `nomor`, `tahun`, `tanggal`, `kata_pengantar_id`, `catatan_penawaran_id`, `tanda_tangan_id`, `batas_waktu`, `customer_id`, `nama_customer`, `alamat_customer`, `no_telp_customer`, `no_wa_customer`, `email_customer`, `detail`, `total`, `created_at`, `created_by`, `updated_at`, `updated_by`, `deleted_at`, `deleted_by`, `no_urut`) VALUES (1, 1, '02', 1, 2026, '2026-11-27', 2, 1, 1, 8, 2, 'Sebastian', 'Jl. Namorambe', '[{\"no_telp_customer\":\"0812881712321\"}]', '[{\"no_wa_customer\":\"0812881712321\"}]', '[{\"email_customer\":\"sbastian@gmail.com\"}]', '[{\"id\":9,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"Sebastian\",\"uraian\":\"ASDADS\",\"jumlah\":1,\"satuan\":\"Unit\",\"harga\":10000,\"total\":10000},{\"id\":10,\"penawaran_proyek_id\":1,\"no_kelompok\":1,\"nama_kelompok\":\"Sebastian\",\"uraian\":\"SSS\",\"jumlah\":2,\"satuan\":\"Unit\",\"harga\":5000,\"total\":10000},{\"id\":11,\"penawaran_proyek_id\":1,\"no_kelompok\":2,\"nama_kelompok\":\"Michaelis\",\"uraian\":\"Arga\",\"jumlah\":3,\"satuan\":\"Pcs\",\"harga\":4000,\"total\":12000}]', 32000.00, '2026-11-27 22:50:33', 'sebastian', '2026-11-28 00:07:43', 'sebastian', '2026-11-28 00:08:30', 'sebastian', 9);
 COMMIT;
 
 -- ----------------------------
@@ -1632,20 +1631,7 @@ CREATE TABLE `penawaran_proyek` (
   `no_wa_customer` varchar(255) DEFAULT NULL,
   `email_customer` varchar(255) DEFAULT NULL,
   `detail` text DEFAULT NULL,
-  `jumlah` decimal(20,2) DEFAULT NULL,
-  `jumlah_pesanan` decimal(20,2) DEFAULT NULL,
-  `sub_total` decimal(20,2) DEFAULT NULL,
-  `persen_diskon` decimal(20,2) DEFAULT NULL,
-  `diskon` decimal(20,2) DEFAULT NULL,
-  `dpp` decimal(20,2) DEFAULT NULL,
-  `persen_ppn` decimal(20,2) DEFAULT NULL,
-  `ppn` decimal(20,2) DEFAULT NULL,
   `total` decimal(20,2) DEFAULT NULL,
-  `approved_at` datetime DEFAULT NULL,
-  `approved_by` varchar(255) DEFAULT NULL,
-  `approved_type` varchar(255) DEFAULT NULL,
-  `rejected_at` datetime DEFAULT NULL,
-  `rejected_by` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `created_by` varchar(255) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -1669,10 +1655,12 @@ CREATE TABLE `penawaran_proyek_detail` (
   `no_kelompok` int(11) DEFAULT NULL,
   `nama_kelompok` varchar(255) DEFAULT NULL,
   `uraian` varchar(255) DEFAULT NULL,
-  `harga` decimal(20,2) DEFAULT NULL,
+  `jumlah` decimal(20,2) DEFAULT NULL,
   `satuan` varchar(255) DEFAULT NULL,
+  `harga` decimal(20,2) DEFAULT NULL,
+  `total` decimal(20,2) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of penawaran_proyek_detail
@@ -2141,7 +2129,7 @@ BEGIN;
 INSERT INTO `users` (`username`, `password`, `users_level_id`, `cabang_id`, `nama`, `jabatan`, `karyawan_id`, `last_login`) VALUES ('001', NULL, 2, 1, 'Dedi Wijaya', 'Admin', 1, NULL);
 INSERT INTO `users` (`username`, `password`, `users_level_id`, `cabang_id`, `nama`, `jabatan`, `karyawan_id`, `last_login`) VALUES ('admin', 'D020BBE760B03D57B3DAFFD56DA97A88', 3, NULL, NULL, NULL, NULL, '2026-05-09 09:42:03');
 INSERT INTO `users` (`username`, `password`, `users_level_id`, `cabang_id`, `nama`, `jabatan`, `karyawan_id`, `last_login`) VALUES ('emi', 'B8D85278BA64E65A5A42EC6EF3AEF773', 3, NULL, NULL, NULL, NULL, '2026-11-21 19:23:06');
-INSERT INTO `users` (`username`, `password`, `users_level_id`, `cabang_id`, `nama`, `jabatan`, `karyawan_id`, `last_login`) VALUES ('sebastian', '4EF85E04C537B51F6CE117869B64EE64', 1, NULL, 'Sebastian', NULL, 6, '2026-11-26 15:54:52');
+INSERT INTO `users` (`username`, `password`, `users_level_id`, `cabang_id`, `nama`, `jabatan`, `karyawan_id`, `last_login`) VALUES ('sebastian', '4EF85E04C537B51F6CE117869B64EE64', 1, NULL, 'Sebastian', NULL, 6, '2026-11-27 21:53:38');
 INSERT INTO `users` (`username`, `password`, `users_level_id`, `cabang_id`, `nama`, `jabatan`, `karyawan_id`, `last_login`) VALUES ('tasya', '3830DFE131B2B227176795DD6DF39C6916F25D384E066476575F030368625A87', 3, NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 

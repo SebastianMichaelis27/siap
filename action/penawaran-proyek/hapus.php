@@ -21,6 +21,12 @@
   { $is_commit = 0;
   }
 
+ $query = "delete from ".$_POST['Nama_Tabel']."_detail where ".$_POST['Nama_Tabel']."_id = '".intval($_POST['id'])."'";
+ $execute = mysqli_query($koneksi, $query);
+ if(!$execute)
+  { $is_commit = 0;
+  }
+
  $query = "delete from ".$_POST['Nama_Tabel']." where id = '".intval($_POST['id'])."'";
  $execute = mysqli_query($koneksi, $query);
  if(!$execute)

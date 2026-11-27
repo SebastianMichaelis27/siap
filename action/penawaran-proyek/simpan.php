@@ -92,6 +92,40 @@
     if($execute)
      { $id = mysqli_insert_id($koneksi);
 
+       //IUD Detail----------------------------------------------------------------------------------------------------------------
+       $execute2 = $koneksi->prepare("update penawaran_proyek_detail set jumlah = null where penawaran_proyek_id = ?");
+       $execute2->bind_param("i", $id);
+       if(!$execute2->execute())
+        { $is_commit = 0;
+        }
+       for($i=0; $i<count($data['detail']); $i++)
+        { $execute2 = $koneksi->prepare("select * from penawaran_proyek_detail where id = ?");
+          $execute2->bind_param("i", $data['detail'][$i]['id']);
+          $execute2->execute();
+          $result2 = $execute2->get_result();
+          if($result2->num_rows > 0)
+           { $execute3 = $koneksi->prepare("update penawaran_proyek_detail set penawaran_proyek_id = ?, no_kelompok = ?, nama_kelompok = ?, uraian = ?, jumlah = ?, satuan = ?, harga = ?, total = ? where id = ?");
+             $execute3->bind_param("iissisiii", $id, $data['detail'][$i]['nomor_kelompok'], $data['detail'][$i]['nama_kelompok'], $data['detail'][$i]['uraian'], $data['detail'][$i]['jumlah'], $data['detail'][$i]['satuan'], $data['detail'][$i]['harga'], $data['detail'][$i]['total'], $data['detail'][$i]['id']);
+             if(!$execute3->execute())
+              { $is_commit = 0;
+              }
+           }
+          else
+           { $execute3 = $koneksi->prepare("insert into penawaran_proyek_detail(penawaran_proyek_id, no_kelompok, nama_kelompok, uraian, jumlah, satuan, harga, total) values(?, ?, ?, ?, ?, ?, ?, ?)");
+             $execute3->bind_param("iissisii", $id, $data['detail'][$i]['nomor_kelompok'], $data['detail'][$i]['nama_kelompok'], $data['detail'][$i]['uraian'], $data['detail'][$i]['jumlah'], $data['detail'][$i]['satuan'], $data['detail'][$i]['harga'], $data['detail'][$i]['total']);
+             if(!$execute3->execute())
+              { $is_commit = 0;
+              }
+           }
+        }
+       $execute2 = $koneksi->prepare("delete from penawaran_proyek_detail where jumlah is null and penawaran_proyek_id = ?");
+       $execute2->bind_param("i", $id);
+       if(!$execute2->execute())
+        { $is_commit = 0;
+        }
+       $is_commit = setDetail($koneksi, $is_commit, "penawaran_proyek", "penawaran_proyek_detail", $id);
+       //IUD Detail----------------------------------------------------------------------------------------------------------------
+
        $query2 = "insert into log_".$_POST['Nama_Tabel']." select ".$_POST['Nama_Tabel'].".*, null, null, (select ifnull(max(no_urut), 0) + 1 from log_".$_POST['Nama_Tabel']." where id = '".$id."') from ".$_POST['Nama_Tabel']." where id = '".$id."'";
        $execute2 = mysqli_query($koneksi, $query2);
        if(!$execute2)
