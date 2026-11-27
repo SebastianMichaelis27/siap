@@ -7,7 +7,7 @@
   { mkdir($lokasi_folder, 0755);
   }
  $lokasi_folder .= $username."/";
- $lokasi_folder .= "penawaran/";
+ $lokasi_folder .= "penawaran-proyek/";
  if(!is_dir($lokasi_folder))
   { mkdir($lokasi_folder, 0755);
   }
@@ -25,11 +25,11 @@
  $filter_barang = "";
  
  $dataRows = array();
- $query = "select penawaran.*, concat(penawaran.kode, '/', lpad(penawaran.nomor, if(3 > length(penawaran.nomor), 3, length(penawaran.nomor)), '0'), '/MIE/', to_roman(month(tanggal)), '/', penawaran.tahun) as nomor_penawaran, kata_pengantar.kata_pengantar from penawaran left join kata_pengantar on penawaran.kata_pengantar_id = kata_pengantar.id where penawaran.id = '".intval($_POST['id'])."'";
+ $query = "select penawaran_proyek.*, concat(penawaran_proyek.kode, '/', lpad(penawaran_proyek.nomor, if(3 > length(penawaran_proyek.nomor), 3, length(penawaran_proyek.nomor)), '0'), '/MIE/', to_roman(month(tanggal)), '/', penawaran_proyek.tahun) as nomor_penawaran, kata_pengantar.kata_pengantar from penawaran_proyek left join kata_pengantar on penawaran_proyek.kata_pengantar_id = kata_pengantar.id where penawaran_proyek.id = '".intval($_POST['id'])."'";
  $execute = mysqli_query($koneksi, $query);
 
  $id = intval($_POST['id']);
- $execute = $koneksi->prepare("select penawaran.*, concat(penawaran.kode, '/', lpad(penawaran.nomor, if(3 > length(penawaran.nomor), 3, length(penawaran.nomor)), '0'), '/MIE/', to_roman(month(tanggal)), '/', penawaran.tahun) as nomor_penawaran, kata_pengantar.kata_pengantar from penawaran left join kata_pengantar on penawaran.kata_pengantar_id = kata_pengantar.id where penawaran.id = ?");
+ $execute = $koneksi->prepare("select penawaran_proyek.*, concat(penawaran_proyek.kode, '/', lpad(penawaran_proyek.nomor, if(3 > length(penawaran_proyek.nomor), 3, length(penawaran_proyek.nomor)), '0'), '/MIE/', to_roman(month(tanggal)), '/', penawaran_proyek.tahun) as nomor_penawaran, kata_pengantar.kata_pengantar from penawaran_proyek left join kata_pengantar on penawaran_proyek.kata_pengantar_id = kata_pengantar.id where penawaran_proyek.id = ?");
  $execute->bind_param("i", $id);
  $execute->execute();
  $result = $execute->get_result();
@@ -44,31 +44,6 @@
  $detail = isset($dataPenawaran['detail']) && $dataPenawaran['detail'] !== "" ? json_decode($dataPenawaran['detail'], true) : array();
  $dataPenawaran['detail'] = $detail;
 
- $barang_id = array_column($detail, 'barang_id');
- $placeholders = implode(',', array_fill(0, count($barang_id), '?'));
- $types = str_repeat('i', count($barang_id));
-
- $execute = $koneksi->prepare("select * from barang where id in (".$placeholders.")");
- $execute->bind_param($types, ...$barang_id);
- $execute->execute();
- $result = $execute->get_result();
- $arrayBarang = $result->fetch_all(MYSQLI_ASSOC);
-
- $satuan_id = array_column($arrayBarang, 'satuan_id') ?? array();
- $placeholders = implode(',', array_fill(0, count($satuan_id), '?'));
- $types = str_repeat('i', count($satuan_id));
-
- $execute = $koneksi->prepare("select * from satuan where id in (".$placeholders.")");
- $execute->bind_param($types, ...$satuan_id);
- $execute->execute();
- $result = $execute->get_result();
- $arraySatuan = $result->fetch_all(MYSQLI_ASSOC);
- $map_satuan = array_column($arraySatuan, 'satuan', 'id');
- foreach($arrayBarang as &$item)
-  { $item['satuan'] = $map_satuan[$item['satuan_id']] ?? null;
-  }
- unset($item);
-
  $catatan_penawaran_id = $dataPenawaran['catatan_penawaran_id'] ?? "";
  $execute = $koneksi->prepare("select * from catatan_penawaran where id = ?");
  $execute->bind_param("i", $catatan_penawaran_id);
@@ -81,51 +56,16 @@
  $no = 0;
  $colspan = 4;
 
- $ada_diskon_item = false;
- foreach($dataPenawaran['detail'] as $key => $data)
-  { if($data['diskon_item'] * 1 > 0 || $data['diskon_faktur'] * 1 > 0)
-     { $ada_diskon_item = true;
-     }
-  }
- if($ada_diskon_item)
-  { //$colspan++;
-  }
-
- if($dataPenawaran['ppn'] * 1 > 0)
-  { //$colspan++;
-  }
  $total = 0;
- $total_ppn = 0;
  $diskon = 0;
  foreach($dataPenawaran['detail'] as $key => $data)
   { $no++;
-    //$diskon = "";
-    if($data['diskon_faktur'] * 1 > 0)
-     { /*if($diskon == "")
-        { $diskon .= "0 + ";
-        }
-       else
-        { $diskon .= " + ";
-        }*/
-       //$diskon .= formatAngka($data['diskon_faktur']);
-     }
-
-    $total += $data['jumlah'] * $data['harga_sebelum_ppn'];
-    $total_ppn += $data['nominal_ppn'];
-    $diskon += ($data['diskon_item'] * 1) + ($data['diskon_faktur'] * 1);
-
     $list .= "<tr>
                <td style='border:1px solid black; padding:5px; text-align:right;'>".($no)."</td>
-               <td style='border:1px solid black; padding:5px;'>".$data['nama_produk']."</td>
-               <td style='border:1px solid black; padding:5px; text-align:center;'>".formatAngka($data['jumlah'])." ".$data['satuan']."</td>
-               <td style='border:1px solid black; padding:5px; text-align:right;'>".formatAngka($data['harga_sebelum_ppn'])."</td>";
-    if($ada_diskon_item)
-     { //$list .= "<td style='border:1px solid black; padding:5px; text-align:right;'>".$diskon."</td>";
-     }
-    if($dataPenawaran['ppn'] * 1 > 0)
-     { //$list .= "<td style='border:1px solid black; padding:5px; text-align:right;'>".$data['nominal_ppn']."</td>";
-     }
-    $list .= " <td style='border:1px solid black; padding:5px; text-align:right;'>".formatAngka($data['jumlah'] * $data['harga_sebelum_ppn'])."</td>
+               <td style='border:1px solid black; padding:5px;'></td>
+               <td style='border:1px solid black; padding:5px; text-align:center;'></td>
+               <td style='border:1px solid black; padding:5px; text-align:right;'></td>
+               <td style='border:1px solid black; padding:5px; text-align:right;'></td>
               </tr>";
   }
 
@@ -196,12 +136,12 @@
   { $list_catatan = "<b style='font-size:11px;'>Catatan :</b><br><table border='0' cellpadding='0' cellspacing='0'>".$list_catatan."</table>";
   }
 
- $html = "<div style='font-size:12px; padding:0px 2cm;'>
+ $html = "<div style='font-size:14px; padding:0px 2cm;'>
            <table style='width:100%; margin:0px; padding:0px;' cellpadding='0px' cellspacing='0px'>
             <tr>
              <td style='width:30px; font-size:12px;'>No</td>
              <td style='text-align:center; width:10px; font-size:12px;'>:</td>
-             <td style='width:350px; font-size:12px;'>".$nomor_penawaran."</td>
+             <td style='width:350px; font-size:12px;'></td>
              <td style='text-align:right; font-size:12px;'>Medan, ".sebutkan_tanggal($tanggal)."</td>
             </tr>
             <tr>
@@ -220,14 +160,8 @@
               <th style='border:1px solid black; padding:5px; width:50px;'>No.</th>
               <th style='border:1px solid black; padding:5px; text-align:left;'>Item</th>
               <th style='border:1px solid black; padding:5px; width:50px;'>Qty</th>
-              <th style='border:1px solid black; padding:5px; width:90px;'>Price</th>";
- if($ada_diskon_item)
-  { //$html .= "<th style='border:1px solid black; padding:5px; width:90px;'>Discount</th>";
-  }
- if($dataPenawaran['ppn'] * 1 > 0)
-  { //$html .= "<th style='border:1px solid black; padding:5px; width:80px;'>PPN</th>";
-  }
- $html .= "   <th style='border:1px solid black; padding:5px; width:110px;'>Amount</th>
+              <th style='border:1px solid black; padding:5px; width:90px;'>Price</th>
+              <th style='border:1px solid black; padding:5px; width:110px;'>Amount</th>
              </tr>
             </thead>
             <tbody>
@@ -236,21 +170,7 @@
               <th style='border:1px solid black; padding:5px; text-align:center;' colspan='".$colspan."'>Total</th>
               <th style='border:1px solid black; padding:5px; text-align:right;'>".formatAngka($total)."</th>
              </tr>
-             <tr>";
- if($diskon > 0)
-  { $html .= "<tr>
-               <th style='border:1px solid black; padding:5px; text-align:center;' colspan='".$colspan."'>Diskon</th>
-               <th style='border:1px solid black; padding:5px; text-align:right;'>".formatAngka($diskon)."</th>
-              </tr>";
-  }
- $html .= "  <tr>
-              <th style='border:1px solid black; padding:5px; text-align:center;' colspan='".$colspan."'>PPN</th>
-              <th style='border:1px solid black; padding:5px; text-align:right;'>".formatAngka($total_ppn)."</th>
-             </tr>
              <tr>
-              <th style='border:1px solid black; padding:5px; text-align:center;' colspan='".$colspan."'>Grand Total</th>
-              <th style='border:1px solid black; padding:5px; text-align:right;'>".formatAngka($total_keseluruhan)."</th>
-             </tr>
             </tbody>
            </table>
            Demikianlah penawaran ini dibuat. Atas perhatian dan kerjasamanya kami ucapkan terimakasih.

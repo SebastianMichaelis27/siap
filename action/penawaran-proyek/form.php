@@ -1966,4 +1966,29 @@
 
  //Kelompok Item--------------------------------------------------------------------------------------------------------
 
+ function cetak(element)
+  { var list = document.getElementsByClassName('cetak');
+    list = [].slice.call(list);
+    var position = list.indexOf(element);
+    document.getElementsByClassName('loader')[0].style['display'] = 'block';
+    document.getElementsByClassName('loader-block')[0].style['display'] = 'block';
+    var formdata = new FormData();
+    formdata.append('username', '<?= $_POST['username'] ?>');
+    formdata.append('users_level_id', '<?= $_POST['users_level_id'] ?>');
+    formdata.append('cabang_id', '<?= $_POST['cabang_id'] ?>');
+    formdata.append('token', '<?= $_POST['token'] ?>');
+    formdata.append('id', document.getElementsByClassName('textarea_edit-id')[position].value);
+    var ajax = new XMLHttpRequest();
+    ajax.addEventListener('load', responseCetak, false);
+    ajax.open('POST', '<?= $_POST['url'] ?>/action/<?= $_POST['form'] ?>/cetak.php');
+    ajax.send(formdata);
+  }
+
+ function responseCetak()
+  { document.getElementsByClassName('loader')[0].style['display'] = 'none';
+    document.getElementsByClassName('loader-block')[0].style['display'] = 'none';
+    document.getElementById('link-cetak').href = event.srcElement.response;
+    document.getElementById('link-cetak').click();
+  }
+
 </script>
